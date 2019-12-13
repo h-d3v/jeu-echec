@@ -21,7 +21,7 @@ public class JoueurDAO extends DAO<Joueur> {
             Connection conn=SQLConnectionFactory.getConnection();
 
             PreparedStatement stmt = conn.prepareStatement("SELECT pseudo FROM Joueur WHERE pseudo = ?");
-            stmt.setString(1, (String)id);
+            stmt.setString(1, (String) id);
             ResultSet rs = stmt.executeQuery();
 
             Joueur unJoueur=null;
