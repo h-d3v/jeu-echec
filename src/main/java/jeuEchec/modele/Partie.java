@@ -2,9 +2,6 @@ package jeuEchec.modele;
 
 import com.google.common.base.Stopwatch;
 
-;
-
-
 
 public class Partie {
 
@@ -19,8 +16,8 @@ public class Partie {
 
     /**
      * Constructeur d'une partie
-     * @param joueurBlanc
-     * @param  joueurNoir
+     * @param joueurBlanc joueur qui a la couleur
+     * @param  joueurNoir joueur
      */
     Partie(Joueur joueurBlanc, Joueur joueurNoir){
         idPartie=compteur;

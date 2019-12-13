@@ -11,9 +11,9 @@ public abstract class Piece {
 
     /**
      * Constructeur
-     * @param uneCoordoneeX
-     * @param uneCoordonneeY
-     * @param uneCouleur
+     * @param uneCoordoneeX coordonee x
+     * @param uneCoordonneeY coordonee y
+     * @param uneCouleur couleur de la piece
      */
     Piece(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur){
         assert uneCoordoneeX>=0;
