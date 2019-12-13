@@ -34,4 +34,14 @@ public class Reine extends Piece {
     public ArrayList<int[]> mouvements(Echiquier unEchiquier) {
         return null;
     }
+
+    @Override
+    public String toString() {
+        if (this.getcouleur().equals(Couleur.BLANC)){
+            return "\u2655";
+        }else{
+            return "\u265B";
+        }
+
+    }
 }

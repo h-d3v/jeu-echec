@@ -53,4 +53,14 @@ public class Tour extends Piece {
     public ArrayList<int[]> mouvements(Echiquier unEchiquier) {
         return null;
     }
+
+    @Override
+    public String toString() {
+        if (this.getcouleur().equals(Couleur.BLANC)){
+            return "\u2656";
+        }else{
+            return "\u265C";
+        }
+
+    }
 }
