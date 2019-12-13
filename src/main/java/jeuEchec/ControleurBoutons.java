@@ -11,5 +11,15 @@ public class ControleurBoutons {
   @FXML 
   private void cliquer() { 
     System.out.println("Salut le monde !"); 
-  } 
+  }
+
+  @FXML
+  private void nouvellePartie(){
+
+  }
+
+  @FXML
+  private void voirAnciennePartie(){
+
+  }
 }
