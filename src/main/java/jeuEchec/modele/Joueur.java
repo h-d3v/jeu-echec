@@ -82,5 +82,4 @@ public class Joueur{
         parties.add(unePartie);
     }
 
-
 }
