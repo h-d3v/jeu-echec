@@ -9,10 +9,6 @@ import java.util.ArrayList;
 
 public class JoueurDAO extends DAO<Joueur> {
     /**
-     *  TODO: chercherTout()
-     */
-
-    /**
      * Lit un objet à partir de son id
      *
      * @param id L'identifiant unique de l'objet à lire pseudo du joueur
