@@ -1,5 +1,7 @@
 package jeuEchec.modele;
 
+import java.util.ArrayList;
+
 public class PartieDAO extends DAO<Partie> {
     /**
      * Lit un objet à partir de son id
@@ -42,6 +44,11 @@ public class PartieDAO extends DAO<Partie> {
      */
     @Override
     public Partie supprimer(Partie objet) throws DAOException {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Partie> chercherTous() throws DAOException {
         return null;
     }
 }
