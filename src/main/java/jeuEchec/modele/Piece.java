@@ -31,7 +31,7 @@ public abstract class Piece {
      * Accesseur de l'attribut uneCouleur
      * @return uneCouleur
      */
-    public Couleur getcouleur() {
+    public Couleur getCouleur() {
         return uneCouleur;
     }
 

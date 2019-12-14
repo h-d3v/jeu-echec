@@ -61,7 +61,7 @@ public class Echiquier {
 
     /**
      *
-     * @return cases un tableau de toutes les Cases du jeu
+     * @return un tableau de toutes les Cases du jeu
      */
     public Case[][] getCases() {
         return cases;
@@ -70,17 +70,17 @@ public class Echiquier {
     /**
      * joue un coup sur l'echequier,
      * fait deplacer la piece choisie dans la case de
-     * destination
+     * destination enleve la piece
      * @param piece piece a deplacer
      * @param xDestination destination x
      * @param yDestination destination y
      */
-    public void joueurCoup(Piece piece, int xDestination, int yDestination){
-        assert piece!=null;
-        assert (xDestination<=7 && xDestination>0);
-        assert (yDestination<=7 && yDestination>0);
-        Couleur cPiece=piece.getcouleur();
-        cases[xDestination][yDestination].setPiece(piece);
-
+        public void jouerCoup(Piece piece, int xDestination, int yDestination){
+            assert piece!=null;
+            assert (xDestination<=7 && xDestination>0);
+            assert (yDestination<=7 && yDestination>0);
+            Couleur couleurPiece=piece.getCouleur();
+            assert(cases[xDestination][yDestination].getPiece().getCouleur()!=couleurPiece);
+            cases[xDestination][yDestination].setPiece(piece);
     }
 }

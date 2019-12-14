@@ -18,6 +18,14 @@ public class Case {
 
     /**
      *
+     * @return la piece de la case
+     */
+    public Piece getPiece() {
+        return piece;
+    }
+
+    /**
+     *
      * @return x de la case
      */
     public int getX() {
@@ -32,6 +40,10 @@ public class Case {
         return y;
     }
 
+    /**
+     * Set la piece de la case
+     * @param piece la piece a mettre dans la case
+     */
     public void setPiece(Piece piece) {
         assert piece!=null;
         this.piece = piece;
