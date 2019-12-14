@@ -7,12 +7,11 @@ public class Cavalier extends Piece {
     /**
      * Constructeur
      *
-     * @param uneCoordoneeX
-     * @param uneCoordonneeY
+
      * @param uneCouleur
      */
-    public Cavalier(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur){
-        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
+    public Cavalier(Couleur uneCouleur){
+        super(uneCouleur);
     }
 
 
