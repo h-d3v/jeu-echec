@@ -1,5 +1,10 @@
 package jeuEchec.modele;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class PartieDAO extends DAO<Partie> {
     /**
      * Lit un objet à partir de son id
@@ -9,8 +14,25 @@ public class PartieDAO extends DAO<Partie> {
      */
     @Override
     public Partie lire(Object id) throws DAOException {
-        return null;
-    }
+        try{
+            Connection conn=SQLConnectionFactory.getConnection();
+
+            PreparedStatement stmt = conn.prepareStatement("SELECT id, pseudoJoueurBlancs, pseudoJoueurNoirs, mouvements, estTerminee, temps, vainqueur  FROM Partie WHERE id = ?");
+            stmt.setString(1, (String)id);
+            ResultSet rs = stmt.executeQuery();
+
+            Partie partie=null;
+            if(rs.next()){
+                partie=new Partie((String)id);
+            }
+
+            rs.close();
+            conn.close();
+            return unJoueur;
+        }
+        catch(SQLException e){
+            throw new DAOException(e);
+        }    }
 
     /**
      * Crée un nouvel objet
