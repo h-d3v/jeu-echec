@@ -5,10 +5,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class JoueurDAO extends DAO<Joueur> {
-
-
     /**
      * Lit un objet à partir de son id
      *
@@ -21,7 +20,7 @@ public class JoueurDAO extends DAO<Joueur> {
             Connection conn=SQLConnectionFactory.getConnection();
 
             PreparedStatement stmt = conn.prepareStatement("SELECT pseudo FROM Joueur WHERE pseudo = ?");
-            stmt.setString(1, (String)id);
+            stmt.setString(1, (String) id);
             ResultSet rs = stmt.executeQuery();
 
             Joueur unJoueur=null;
@@ -78,11 +77,15 @@ public class JoueurDAO extends DAO<Joueur> {
      */
     @Override
     public Joueur modifier(Joueur joueur) throws DAOException {
-        Joueur unJoueur=null;
+        /**
+         *
+         *      LA TABLE NE POSSEDE QUE SA CLE PRIMAIRE DONC NE PEUT ETRE MODIFIEE
+         *
+         * Joueur unJoueur=null;
         try{
             Connection conn=SQLConnectionFactory.getConnection();
 
-            PreparedStatement stmt = conn.prepareStatement("UPDATE Joueur SET pseudo WHERE pseudo=?");
+            PreparedStatement stmt = conn.prepareStatement("UPDATE Joueur SET xxxxx WHERE pseudo=?");
             stmt.setString(1, joueur.getPseudo());
             stmt.execute();
 
@@ -97,7 +100,12 @@ public class JoueurDAO extends DAO<Joueur> {
             throw new DAOException(e);
         }
         return unJoueur;
+
+         */
+        return null;
+
     }
+
 
     /**
      * Supprime un objet de la source de données
@@ -111,7 +119,7 @@ public class JoueurDAO extends DAO<Joueur> {
         try{
             Connection conn=SQLConnectionFactory.getConnection();
 
-        PreparedStatement stmt = conn.prepareStatement("DELETE FROM Joueur WHERE pseudo=?");
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM Joueur WHERE pseudo=?");
             stmt.setString(1, joueur.getPseudo());
             stmt.execute();
 
@@ -124,5 +132,25 @@ public class JoueurDAO extends DAO<Joueur> {
             throw new DAOException(e);
         }
         return unJoueur;
+    }
+    @Override
+    public ArrayList<Joueur> chercherTous() throws DAOException{
+        ArrayList<Joueur> joueurs= new ArrayList<Joueur>();
+        try{
+            Connection conn=SQLConnectionFactory.getConnection();
+
+            PreparedStatement stmt = conn.prepareStatement("SELECT *FROM Joueur");
+            ResultSet rs=stmt.executeQuery();
+
+            while(rs.next()){
+                joueurs.add(new Joueur(rs.getString("pseudo")));
+            }
+            conn.close();
+
+        }
+        catch(SQLException e){
+            throw new DAOException(e);
+        }
+        return joueurs;
     }
 }
