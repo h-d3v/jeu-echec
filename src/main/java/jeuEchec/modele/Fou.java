@@ -7,12 +7,11 @@ public class Fou extends Piece {
     /**
      * Constructeur
      *
-     * @param uneCoordoneeX
-     * @param uneCoordonneeY
+
      * @param uneCouleur
      */
-    Fou(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
-        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
+    Fou(Couleur uneCouleur) {
+        super(uneCouleur);
     }
 
     /**
