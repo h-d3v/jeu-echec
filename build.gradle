@@ -31,6 +31,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     //Connecteur jdbc pour sqlite
     compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.28.0'
+    implementation 'org.jetbrains:annotations:15.0'
 
 }
 
@@ -42,5 +43,7 @@ application {
 
 javafx {
     version = "13"
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    modules = ['javafx.controls', 'javafx.fxml']
 }
+    compileJava.options.encoding = "UTF-8"
+    compileTestJava.options.encoding = "UTF-8"

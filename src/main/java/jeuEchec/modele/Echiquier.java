@@ -3,91 +3,84 @@ package jeuEchec.modele;
 import java.util.ArrayList;
 
 public class Echiquier {
-   private ArrayList<Piece> piecesBlanches;
-   private ArrayList<Piece> piecesNoires;
+   private Case[][] cases;
 
     /**
-     * constructeur, initialise toutes les pieces du jeu
-     * et les ajoutes a  la liste  des pieces blanches et noires du jeu.
+     * constructeur d'un nouveau echiquier
      */
    Echiquier(){
-       piecesBlanches= new ArrayList<Piece>();
-       //Cr/ation et ajout de 7 pions blancs
+       // Initialisation des cases de l'echequier
+       //  et creation des pions + ajout a leur case respectives
        for (int i = 0; i <8 ; i++) {
-           Pion pion= new Pion(i, 1,Couleur.BLANC);
-           piecesBlanches.add(pion) ;
+           for (int j = 0; j < 8; j++) {
+               cases[i][j] = new Case(i, j);
+           }
+           Pion pionB = new Pion(Couleur.BLANC);
+           Pion pionN = new Pion(Couleur.NOIR);
+           cases[i][1].setPiece(pionB);
+           cases[i][6].setPiece(pionN);
        }
-       //Creation et ajout des 7 pieces speciale du jeu
-       Tour tourB1= new Tour(0,1,Couleur.BLANC);
-       Cavalier cavalierB1= new Cavalier(1,1, Couleur.BLANC);
-       Fou fouB1= new Fou(2, 1, Couleur.BLANC);
-       Reine reineB= new Reine(3,1, Couleur.BLANC);
-       Roi roiB= new Roi(4, 1, Couleur.BLANC);
-       Fou fouB2= new Fou(5, 1, Couleur.BLANC);
-       Cavalier cavalierB2= new Cavalier(6,1, Couleur.BLANC);
-       Tour tourB2= new Tour(7,1,Couleur.BLANC);
-       piecesBlanches.add(tourB1);
-       piecesBlanches.add(cavalierB1);
-       piecesBlanches.add(fouB1);
-       piecesBlanches.add(reineB);
-       piecesBlanches.add(roiB);
-       piecesBlanches.add(fouB2);
-       piecesBlanches.add(cavalierB2);
-       piecesBlanches.add(tourB2);
+       //Creation des pieces speciales blanches
+       Tour tourB1= new Tour(Couleur.BLANC);
+       Cavalier cavalierB1= new Cavalier(Couleur.BLANC);
+       Fou fouB1= new Fou(Couleur.BLANC);
+       Reine reineB= new Reine(Couleur.BLANC);
+       Roi roiB= new Roi( Couleur.BLANC);
+       Fou fouB2= new Fou(Couleur.BLANC);
+       Cavalier cavalierB2= new Cavalier(Couleur.BLANC);
+       Tour tourB2= new Tour(Couleur.BLANC);
 
-       piecesNoires= new ArrayList<Piece>();
-       //Cr/ation et ajout de 7 pions blancs
-       for (int i = 0; i <8 ; i++) {
-           Pion pion= new Pion(i, 6,Couleur.NOIR);
-           piecesNoires.add(pion) ;
-       }
-       //Creation et ajout des 7 pieces speciale du jeu
-       Tour tourN1= new Tour(0,6,Couleur.NOIR);
-       Cavalier cavalierN1= new Cavalier(1,6, Couleur.NOIR);
-       Fou fouN1= new Fou(2, 6, Couleur.NOIR);
-       Reine reineN= new Reine(3,6, Couleur.NOIR);
-       Roi roiN= new Roi(4, 6, Couleur.NOIR);
-       Fou fouN2= new Fou(5, 6, Couleur.NOIR);
-       Cavalier cavalierN2= new Cavalier(6,6, Couleur.NOIR);
-       Tour tourN2= new Tour(7,6,Couleur.NOIR);
-       piecesBlanches.add(tourN1);
-       piecesBlanches.add(cavalierN1);
-       piecesBlanches.add(fouN1);
-       piecesBlanches.add(reineN);
-       piecesBlanches.add(roiN);
-       piecesBlanches.add(fouN2);
-       piecesBlanches.add(cavalierN2);
-       piecesBlanches.add(tourN2);
+       //Creation des pieces speciales noires
+       Tour tourN1= new Tour(Couleur.NOIR);
+       Cavalier cavalierN1= new Cavalier(Couleur.NOIR);
+       Fou fouN1= new Fou(Couleur.NOIR);
+       Reine reineN= new Reine(Couleur.NOIR);
+       Roi roiN= new Roi( Couleur.NOIR);
+       Fou fouN2= new Fou(Couleur.NOIR);
+       Cavalier cavalierN2= new Cavalier(Couleur.NOIR);
+       Tour tourN2= new Tour(Couleur.NOIR);
+
+       //ajout des pieces dans les cases de l'echequier
+       cases[0][0].setPiece(tourB1);
+       cases[1][0].setPiece(cavalierB1);
+       cases[2][0].setPiece(fouB1);
+       cases[3][0].setPiece(reineB);
+       cases[4][0].setPiece(roiB);
+       cases[5][0].setPiece(fouB2);
+       cases[6][0].setPiece(cavalierB2);
+       cases[7][0].setPiece(tourB2);
+       cases[0][7].setPiece(tourN1);
+       cases[1][7].setPiece(cavalierN1);
+       cases[2][7].setPiece(fouN1);
+       cases[3][7].setPiece(reineN);
+       cases[4][7].setPiece(roiN);
+       cases[5][7].setPiece(fouN2);
+       cases[6][7].setPiece(cavalierN2);
+       cases[7][7].setPiece(tourN2);
    }
 
     /**
      *
-     * @return ArrayList<Piece> piecesBlanches
+     * @return un tableau de toutes les Cases du jeu
      */
-    public ArrayList<Piece> getPiecesBlanches(){
-        return piecesBlanches;
+    public Case[][] getCases() {
+        return cases;
     }
 
     /**
-     *
-     * @return piecesNoires
+     * joue un coup sur l'echequier,
+     * fait deplacer la piece choisie dans la case de
+     * destination enleve la piece
+     * @param piece piece a deplacer
+     * @param xDestination destination x
+     * @param yDestination destination y
      */
-    public ArrayList<Piece> getPiecesNoires(){
-        return piecesNoires;
-    }
-
-    /**
-     *
-     * @param piecesBlanches nouvelle liste de pieces blanches
-     */
-    public void setPiecesBlanches(ArrayList<Piece> piecesBlanches){
-    }
-
-    /**
-     *
-     * @param piecesNoires nouvelle liste de pieces noires
-     */
-    public void setPiecesNoires(ArrayList<Piece> piecesNoires) {
-        this.piecesNoires = piecesNoires;
+        public void jouerCoup(Piece piece, int xDestination, int yDestination){
+            assert piece!=null;
+            assert (xDestination<=7 && xDestination>0);
+            assert (yDestination<=7 && yDestination>0);
+            Couleur couleurPiece=piece.getCouleur();
+            assert(cases[xDestination][yDestination].getPiece().getCouleur()!=couleurPiece);
+            cases[xDestination][yDestination].setPiece(piece);
     }
 }

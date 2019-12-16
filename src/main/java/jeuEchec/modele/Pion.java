@@ -7,12 +7,11 @@ public class Pion extends Piece {
     /**
      * Constructeur
      *
-     * @param uneCoordoneeX
-     * @param uneCoordonneeY
+
      * @param uneCouleur
      */
-    Pion(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
-        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
+    Pion(Couleur uneCouleur) {
+        super(uneCouleur);
         premierMouvement=true;
     }
 

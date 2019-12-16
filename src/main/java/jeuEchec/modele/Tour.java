@@ -7,12 +7,10 @@ public class Tour extends Piece {
     /**
      * Constructeur
      *
-     * @param uneCoordoneeX
-     * @param uneCoordonneeY
-     * @param uneCouleur
+
      */
-    Tour(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
-        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
+    Tour(Couleur uneCouleur) {
+        super(uneCouleur);
         premierMouvement=true;
     }
     /**

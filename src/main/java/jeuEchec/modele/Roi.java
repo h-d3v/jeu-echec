@@ -7,12 +7,11 @@ public class Roi extends Piece {
     /**
      * Constructeur
      *
-     * @param uneCoordoneeX
-     * @param uneCoordonneeY
+
      * @param uneCouleur
      */
-    Roi(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
-        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
+    Roi(Couleur uneCouleur) {
+        super(uneCouleur);
         premierMouvement=true;
     }
     /**
