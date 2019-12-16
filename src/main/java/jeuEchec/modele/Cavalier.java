@@ -38,7 +38,7 @@ public class Cavalier extends Piece {
 
     @Override
     public String toString() {
-        if (this.getcouleur().equals(Couleur.BLANC)){
+        if (this.getCouleur().equals(Couleur.BLANC)){
             return "\u2658";
         }else{
             return "\u265E";

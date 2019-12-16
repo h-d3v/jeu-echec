@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 public class JeuEchec extends Application{
 
   public void start(Stage stage) throws Exception {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/nouvellePartie.fxml"));
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/menuPrincipal.fxml"));
 
     Parent root=loader.load();
     loader.getController();
