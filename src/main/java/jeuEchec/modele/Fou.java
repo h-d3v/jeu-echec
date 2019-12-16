@@ -34,4 +34,13 @@ public class Fou extends Piece {
     public ArrayList<int[]> mouvements(Echiquier unEchiquier) {
         return null;
     }
+
+    @Override
+    public String toString() {
+        if (this.getCouleur().equals(Couleur.BLANC)) {
+            return "\u2657";
+        } else {
+            return "\u265D";
+        }
+    }
 }

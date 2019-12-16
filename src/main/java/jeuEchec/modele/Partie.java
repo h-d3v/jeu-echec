@@ -1,28 +1,21 @@
 package jeuEchec.modele;
 
 import com.google.common.base.Stopwatch;
-import javafx.scene.paint.Stop;
-
-import java.util.Objects;
 
 
 
 public class Partie {
-    public enum StatutPartie {
-        ENCOURS,
-        PAUSE,
-        TERMINEE
-    }
-
+    private Echiquier echiquier;
     private int idPartie;
     private Joueur joueurBlanc;
     private Joueur joueurNoir;
-    private Stopwatch tempsPartie= Stopwatch.createUnstarted();
+    private boolean estTerminee;
+    protected Stopwatch tempsPartie;
     private Joueur tourJoueur;
     private Joueur joueurGagant;
     private static int compteur=1;
-    private Echiquier echequier;
-    private StatutPartie statut;
+    private String mouvements;
+
     /**
      * Constructeur d'une nouvelle partie
      * @param joueurBlanc joueur qui a la couleur
@@ -33,41 +26,53 @@ public class Partie {
         assert joueurNoir!=null;
         idPartie=compteur;
         compteur++;
-        statut=StatutPartie.ENCOURS;
+        tempsPartie=Stopwatch.createUnstarted();
+        tempsPartie.start();
         this.joueurBlanc=joueurBlanc;
         this.joueurNoir=joueurNoir;
-        echequier=new Echiquier();
-        tempsPartie.start();
+        this.echiquier=new Echiquier();
         tourJoueur=joueurBlanc;
+        mouvements="";
     }
- //Accesseurs et mutateurs
+
+
     /**
+     * Constructeur d'une partie sauvegardee
+     * @param id int id de la partie
+     * @param joueurBlanc Joueur
+     * @param joueurNoir Joueur
+     * @param  mouvements String
      *
-     * @return le statut de la partie
+     *
      */
-    public StatutPartie getStatut() {
-        return statut;
+    Partie(Integer id, Joueur joueurBlanc, Joueur joueurNoir, String mouvements){
+        this.idPartie=id;
+        this.joueurNoir=joueurNoir;
+        this.joueurBlanc=joueurBlanc;
+        this.mouvements=mouvements;
     }
 
     /**
      *
-     * @return le joueur gagnnant de la partie
+     * @return echiquier Echiquier
      */
-    public Joueur getJoueurGagant() {
-        return joueurGagant;
+    public Echiquier getEchiquier() {
+        return echiquier;
     }
 
     /**
      *
-     * @return le tour du joueur
+     * @return idPartie int
      */
-    public Joueur getTourJoueur() {
-        return tourJoueur;
+    public int getIdPartie() {
+        return idPartie;
     }
+
+
 
     /**
      *
-     * @return joueur blanc de la partie
+     * @return joueurBlanc Joueur
      */
     public Joueur getJoueurBlanc() {
         return joueurBlanc;
@@ -75,15 +80,17 @@ public class Partie {
 
     /**
      *
-     * @return le chrono de la partie
+     *
+     * @return joueurGagant Joueur
      */
-    public Stopwatch getTempsPartie() {
-        return tempsPartie;
+    public Joueur getJoueurGagant() {
+        return joueurGagant;
     }
+
 
     /**
      *
-     * @return joueur noir de la partie
+     * @return joueurNoir Joueur
      */
     public Joueur getJoueurNoir() {
         return joueurNoir;
@@ -91,49 +98,84 @@ public class Partie {
 
     /**
      *
-     * @return echequier de la partie
+     * @return tourJoueur Joueur
      */
-    public Echiquier getEchequier() {
-        return echequier;
+    public Joueur getTourJoueur() {
+        return tourJoueur;
     }
 
     /**
-     * @return l'id de la partie
+     *
+     * @return temps Stopwatch
      */
-    public int getIdPartie() {
-        return idPartie;
+    public Stopwatch getTemps() {
+        return tempsPartie;
     }
 
     /**
-     * @param joueurGagant le joueur ayant gagné la partie
+     *
+     * @return mouvements String la representation en texte des mouvements sur l'echiquier
+     */
+    public String getMouvements() {
+        return mouvements;
+    }
+
+    /**
+     *
+     * @return estTerminee boolean
+     */
+    public boolean estTerminee() {
+        return estTerminee;
+    }
+
+
+
+    /**
+     *
+     * @param estTerminee
+     */
+    public void setEstTerminee(boolean estTerminee) {
+        this.estTerminee = estTerminee;
+    }
+
+    /**
+     *
+     * @param idPartie
+     */
+    public void setIdPartie(int idPartie) {
+        this.idPartie = idPartie;
+    }
+
+    /**
+     *
+     * @param joueurBlanc
+     */
+    public void setJoueurBlanc(Joueur joueurBlanc) {
+        this.joueurBlanc = joueurBlanc;
+    }
+
+    /**
+     *
+     * @param joueurGagant le joueur qui a gagné
      */
     public void setJoueurGagant(Joueur joueurGagant) {
         this.joueurGagant = joueurGagant;
     }
 
-
-    public void setStatut(StatutPartie statut) {
-        assert(statut!=null);
-        this.statut = statut;
+    /**
+     *
+     * @param joueurNoir le joueur ayant les pions noirs
+     */
+    public void setJoueurNoir(Joueur joueurNoir) {
+        this.joueurNoir = joueurNoir;
     }
 
     /**
      *
-     * @param unJoueur le joueur auquel il est au tour de joué
+     * @param mouvements les mouvements de la partie
      */
-    public void setTourJoueur(Joueur unJoueur) {
-        assert(unJoueur!=null);
-        this.tourJoueur = unJoueur;
+    public void setMouvements(String mouvements) {
+        this.mouvements = mouvements;
     }
-
-    //Autres methodes
-    public void mettreEnPauseTemps(){
-        tempsPartie.stop();
-    }
-
-    public void mettreEnMarcheTemps(){
-        tempsPartie.start();
-    }
-
 
 }
