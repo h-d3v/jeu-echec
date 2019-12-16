@@ -118,9 +118,14 @@ public class JoueurDAO extends DAO<Joueur> {
         Joueur unJoueur=null;
         try{
             Connection conn=SQLConnectionFactory.getConnection();
-
+            PartieDAO partieDAO=new PartieDAO();
+            //partieDAO.supprimer(new Partie(1,new Joueur(""),new Joueur(""), ""));
+            for(Partie partie : partieDAO.chercherParJoueur(joueur)){
+                partieDAO.supprimer(partie);
+            }
             PreparedStatement stmt = conn.prepareStatement("DELETE FROM Joueur WHERE pseudo=?");
             stmt.setString(1, joueur.getPseudo());
+
             stmt.execute();
 
             unJoueur=joueur;
