@@ -1,4 +1,7 @@
 package jeuEchec.modele;
+
+import java.util.ArrayList;
+
 /*
  * Classe d'accès aux données générique
  *
@@ -37,5 +40,10 @@ public abstract class DAO<T> {
      * @return l'objet supprimé ou null s'il n'a pas été trouvé
      */
     public abstract T supprimer(T objet) throws DAOException;
+
+    public abstract ArrayList<T> chercherTous() throws DAOException;
+
+
+
 
 }
