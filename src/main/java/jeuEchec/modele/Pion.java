@@ -55,7 +55,7 @@ public class Pion extends Piece {
     }
     @Override
     public String toString() {
-        if (this.getcouleur().equals(Couleur.BLANC)) {
+        if (this.getCouleur().equals(Couleur.BLANC)) {
             return "\u2659";
         } else {
             return "\u265F";

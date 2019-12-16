@@ -55,7 +55,7 @@ public class Roi extends Piece {
 
     @Override
     public String toString() {
-        if (this.getcouleur().equals(Couleur.BLANC)){
+        if (this.getCouleur().equals(Couleur.BLANC)){
             return "\u2654";
         }else{
             return "\u265A";

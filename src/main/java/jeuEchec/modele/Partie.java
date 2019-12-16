@@ -1,7 +1,7 @@
 package jeuEchec.modele;
 
 import com.google.common.base.Stopwatch;
-import javafx.scene.paint.Stop;
+
 
 
 public class Partie {
@@ -9,12 +9,12 @@ public class Partie {
     private int idPartie;
     private Joueur joueurBlanc;
     private Joueur joueurNoir;
-    private boolean partieEnCours;
-    public Stopwatch tempsPartie;
+    private boolean estTerminee;
+    protected Stopwatch tempsPartie;
     private Joueur tourJoueur;
     private Joueur joueurGagant;
     private static int compteur=1;
-    private Echiquier echequier;
+    private String mouvements;
 
     /**
      * Constructeur d'une nouvelle partie
@@ -26,19 +26,21 @@ public class Partie {
         assert joueurNoir!=null;
         idPartie=compteur;
         compteur++;
-        //assert tempsPartie != null;
-        //tempsPartie.start();
-        partieEnCours=true;
+        tempsPartie=Stopwatch.createUnstarted();
+        tempsPartie.start();
         this.joueurBlanc=joueurBlanc;
         this.joueurNoir=joueurNoir;
-        this.echequier=new Echiquier();
+        this.echiquier=new Echiquier();
+        tourJoueur=joueurBlanc;
+        mouvements="";
     }
+
 
     /**
      * Constructeur d'une partie sauvegardee
-     * @param id
-     * @param joueurBlanc
-     * @param joueurNoir
+     * @param id int id de la partie
+     * @param joueurBlanc Joueur
+     * @param joueurNoir Joueur
      * @param  mouvements String
      *
      *
@@ -66,6 +68,8 @@ public class Partie {
         return idPartie;
     }
 
+
+
     /**
      *
      * @return joueurBlanc Joueur
@@ -82,6 +86,7 @@ public class Partie {
     public Joueur getJoueurGagant() {
         return joueurGagant;
     }
+
 
     /**
      *
@@ -104,7 +109,7 @@ public class Partie {
      * @return temps Stopwatch
      */
     public Stopwatch getTemps() {
-        return temps;
+        return tempsPartie;
     }
 
     /**
@@ -123,13 +128,7 @@ public class Partie {
         return estTerminee;
     }
 
-    /**
-     *
-     * @param echiquier
-     */
-    public void setEchiquier(Echiquier echiquier) {
-        this.echiquier = echiquier;
-    }
+
 
     /**
      *
@@ -157,7 +156,7 @@ public class Partie {
 
     /**
      *
-     * @param joueurGagant
+     * @param joueurGagant le joueur qui a gagné
      */
     public void setJoueurGagant(Joueur joueurGagant) {
         this.joueurGagant = joueurGagant;
@@ -165,7 +164,7 @@ public class Partie {
 
     /**
      *
-     * @param joueurNoir
+     * @param joueurNoir le joueur ayant les pions noirs
      */
     public void setJoueurNoir(Joueur joueurNoir) {
         this.joueurNoir = joueurNoir;
@@ -173,7 +172,7 @@ public class Partie {
 
     /**
      *
-     * @param mouvements
+     * @param mouvements les mouvements de la partie
      */
     public void setMouvements(String mouvements) {
         this.mouvements = mouvements;

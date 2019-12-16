@@ -37,7 +37,7 @@ public class Fou extends Piece {
 
     @Override
     public String toString() {
-        if (this.getcouleur().equals(Couleur.BLANC)) {
+        if (this.getCouleur().equals(Couleur.BLANC)) {
             return "\u2657";
         } else {
             return "\u265D";

@@ -54,7 +54,7 @@ public class Tour extends Piece {
 
     @Override
     public String toString() {
-        if (this.getcouleur().equals(Couleur.BLANC)){
+        if (this.getCouleur().equals(Couleur.BLANC)){
             return "\u2656";
         }else{
             return "\u265C";

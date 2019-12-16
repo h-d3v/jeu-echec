@@ -36,7 +36,7 @@ public class Reine extends Piece {
 
     @Override
     public String toString() {
-        if (this.getcouleur().equals(Couleur.BLANC)){
+        if (this.getCouleur().equals(Couleur.BLANC)){
             return "\u2655";
         }else{
             return "\u265B";
