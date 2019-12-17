@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="vuePartie" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TilePane fx:id="tpEchequierPartie" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="531.0">
+         <children>
+            <Rectangle fx:id="c07" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c17" accessibleText="♙" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c27" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c37" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c47" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c57" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c67" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c77" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c06" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c16" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c26" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c36" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c46" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c56" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c66" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c76" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c05" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c15" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c25" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c35" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c45" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c55" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c65" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c75" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c04" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c24" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c34" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c44" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c54" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c64" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c74" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c03" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c13" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c23" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c33" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c43" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c53" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c63" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c73" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c02" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c12" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c22" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c32" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c42" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c52" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c62" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c72" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c01" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c11" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c21" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c31" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c41" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c51" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c61" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c71" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c00" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c10" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c20" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c30" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c40" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c50" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c60" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c70" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+         </children>
+      </TilePane>
+      <Button fx:id="btnPausePartie" layoutX="568.0" layoutY="317.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" text="Pause">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Button>
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="540.0" layoutY="138.0" prefHeight="64.0" prefWidth="177.0" style="-fx-border-color: black;" text="Tour De" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbNomJoueurTour" alignment="CENTER" contentDisplay="CENTER" layoutX="546.0" layoutY="164.0" prefHeight="38.0" prefWidth="165.0" text="NomJoueur">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnAbondonPartie" layoutX="562.0" layoutY="374.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="133.0" text="J'abandonne">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Button>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="552.0" layoutY="10.0" prefHeight="72.0" prefWidth="154.0" style="-fx-border-color: black;" text="Temps Partie">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbTempsPartie" layoutX="609.0" layoutY="46.0" text="Temps">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -48,10 +48,7 @@ public class Tour extends Piece {
      * @return ArrayList<int [ ]>
      */
     @Override
-    public ArrayList<int[]> mouvements(Echiquier unEchiquier) {
-        return null;
-    }
-
+    public ArrayList<int[]> mouvements(Echiquier unEchiquier) { return null; }
     @Override
     public String toString() {
         if (this.getCouleur().equals(Couleur.BLANC)){
