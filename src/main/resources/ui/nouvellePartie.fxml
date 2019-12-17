@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" fx:controller="jeuEchec.ControleurNouvellePartie" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button layoutX="450.0" layoutY="301.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: black;" text="JOUER!">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="32.0" layoutY="301.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: black;" text="Retour">
+      <Button fx:id="btnRetour" layoutX="32.0" layoutY="301.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="109.0"  onAction="#retourMenuPrinci" style="-fx-border-color: black;" text="Retour">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>

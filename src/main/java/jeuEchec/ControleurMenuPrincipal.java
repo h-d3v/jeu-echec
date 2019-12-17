@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 
 public class ControleurMenuPrincipal implements Initializable {
     protected Stage parent;
-    ResourceBundle resources;
+    protected ResourceBundle resources;
     protected Modele modele;
 
     public ControleurMenuPrincipal() {
@@ -24,7 +24,7 @@ public class ControleurMenuPrincipal implements Initializable {
     private Button btnNouvellePartie;
 
     @FXML
-    private void nouvellePartie() throws IOException {
+    public void nouvellePartie() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/fenetreNouvellePartie.fxml"));
         loader.setController(this);
         Parent root=loader.load();
