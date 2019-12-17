@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" style="-fx-background-image: url(background.jpg);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeuEchec.ControleurMenuPrincipal">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="393.0" prefWidth="640.0" style="-fx-background-image: url(background.jpg); -fx-background-repeat: repeat;" VBox.vgrow="ALWAYS">
+      <children>
+            <Button fx:id="btnNouvellePartie" layoutX="252.0" layoutY="159.0" mnemonicParsing="false" onAction="#nouvellePartie" prefHeight="44.0" prefWidth="130.0" style="-fx-background-color: lightblue;" text="Nouvelle Partie">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Comic Sans MS" size="13.0" />
+               </font></Button>
+            <Button fx:id="btnReprendrePartieEnCours" layoutX="215.0" layoutY="230.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="204.0" style="-fx-background-color: lightblue;" text="Reprendre une partie en cours">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Comic Sans MS" size="13.0" />
+               </font></Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="95.0" layoutY="21.0" prefHeight="119.0" prefWidth="469.0" text="Bienvenue, veuillez choisir une option" textAlignment="CENTER">
+               <font>
+                  <Font name="Comic Sans MS" size="24.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
