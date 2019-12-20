@@ -21,7 +21,7 @@ public class Partie {
      * @param joueurBlanc joueur qui a la couleur
      * @param  joueurNoir joueur
      */
-    Partie(Joueur joueurBlanc, Joueur joueurNoir){
+    public Partie(Joueur joueurBlanc, Joueur joueurNoir){
         assert joueurBlanc!=null;
         assert joueurNoir!=null;
         idPartie=compteur;
@@ -42,9 +42,8 @@ public class Partie {
      * @param joueurBlanc Joueur
      * @param joueurNoir Joueur
      * @param  mouvements String
-     *
-     *
      */
+
     Partie(Integer id, Joueur joueurBlanc, Joueur joueurNoir, String mouvements){
         this.idPartie=id;
         this.joueurNoir=joueurNoir;

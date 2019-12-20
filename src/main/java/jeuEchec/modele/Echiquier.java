@@ -1,18 +1,19 @@
 package jeuEchec.modele;
 
-import java.util.ArrayList;
+
 
 public class Echiquier {
-   private Case[][] cases;
-
+   protected Case[][]  cases;
     /**
      * constructeur d'un nouveau echiquier
      */
    Echiquier(){
        // Initialisation des cases de l'echequier
        //  et creation des pions + ajout a leur case respectives
+       cases=new Case[8][8];
        for (int i = 0; i <8 ; i++) {
            for (int j = 0; j < 8; j++) {
+
                cases[i][j] = new Case(i, j);
            }
            Pion pionB = new Pion(Couleur.BLANC);
