@@ -3,13 +3,14 @@ package jeuEchec.modele;
 
 
 public class Echiquier {
-   protected Case[][] cases=new Case[8][];
+   protected Case[][]  cases;
     /**
      * constructeur d'un nouveau echiquier
      */
    Echiquier(){
        // Initialisation des cases de l'echequier
        //  et creation des pions + ajout a leur case respectives
+       cases=new Case[8][8];
        for (int i = 0; i <8 ; i++) {
            for (int j = 0; j < 8; j++) {
 
