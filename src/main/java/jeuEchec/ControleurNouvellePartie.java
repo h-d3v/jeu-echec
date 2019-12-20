@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import jeuEchec.modele.DAOException;
@@ -34,6 +36,11 @@ public class ControleurNouvellePartie implements Initializable {
     @FXML
     private TextField tFpseudoBlanc;
 
+    @FXML
+    private Label lblEnonce;
+
+    @FXML
+    Button btnCommencerPartie;
 
 
     @Override
@@ -80,8 +87,9 @@ public class ControleurNouvellePartie implements Initializable {
         //Valide les pseudos des joueurs
         if(!validerEntrées()){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Erreur");
             errorAlert.setHeaderText("Pseudo(s) non valide");
-            errorAlert.setContentText("Pseudo doivent etre composer d'au moin \n une lettre ou un chiffre");
+            errorAlert.setContentText("Pseudo doivent etre différents et composer \n uniquement de lettres ou de chiffres");
             errorAlert.showAndWait();
             return;
         }
@@ -94,7 +102,7 @@ public class ControleurNouvellePartie implements Initializable {
         boolean noirExiste=modele.chercherJoueur(joueurNoir);
         if(!blancExiste){modele.ajouterJoueur(joueurBlanc); }
         if(!noirExiste){modele.ajouterJoueur(joueurNoir);}
-        ArrayList<Joueur> joueursPartie=new ArrayList<Joueur>();
+        ArrayList<Joueur> joueursPartie=new ArrayList<>();
         joueursPartie.add(joueurBlanc);
         joueursPartie.add(joueurNoir);
         modele.setJoueursCourrant(joueursPartie);
@@ -113,19 +121,22 @@ public class ControleurNouvellePartie implements Initializable {
     }
 
     /**
-     * Valide les entrees des utilisateurs
+     * Valide les entrees des utilisateurs et changen le css des textField
+     * ainsi que du labelde l'énoncé
      * @return boolean si les pseudo des utilisateurs sont valides ou non
      */
     public boolean validerEntrées(){
         boolean valide=false;
-        if(tFpseudoNoir.getText().matches("[A-Za-zZ0-9]+") && tFpseudoBlanc.getText().matches("[A-Za-z0-9]+") ){
+        if(tFpseudoNoir.getText().matches("[A-Za-zZ0-9]+") && tFpseudoBlanc.getText().matches("[A-Za-z0-9]+") && !(tFpseudoBlanc.getText().equals(tFpseudoNoir.getText()))){
             tFpseudoNoir.setStyle("-fx-border-color: lightgreen");
             tFpseudoBlanc.setStyle("-fx-border-color: lightgreen");
+            lblEnonce.setStyle("-fx-text-fill: black");
             valide=true;
         }
         else{
             tFpseudoNoir.setStyle("-fx-border-color: red");
             tFpseudoBlanc.setStyle("-fx-border-color: red");
+            lblEnonce.setStyle("-fx-text-fill: red");
         }
         return valide;
     }

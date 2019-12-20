@@ -6,15 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"  fx:controller="jeuEchec.ControleurNouvellePartie" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeuEchec.ControleurNouvellePartie">
    <children>
-      <Button fx:id="btnCommencerPartie" layoutX="450.0" layoutY="301.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="109.0" onAction="#jouerPartie" style="-fx-border-color: black;" text="JOUER!">
+      <Button fx:id="btnCommencerPartie" layoutX="450.0" layoutY="301.0" mnemonicParsing="false" onAction="#jouerPartie" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: black;" text="JOUER!">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnRetour" layoutX="32.0" layoutY="301.0" mnemonicParsing="false"  onAction="#retourMenuPrinci" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: black;" text="Retour">
+      <Button fx:id="btnRetour" layoutX="32.0" layoutY="301.0" mnemonicParsing="false" onAction="#retourMenuPrinci" prefHeight="35.0" prefWidth="109.0" style="-fx-border-color: black;" text="Retour">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
@@ -34,15 +33,20 @@
             <Font name="Comic Sans MS" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="tFpseudoBlanc" promptText="Entrez un pseudo" layoutX="300.0"  onKeyReleased="#validerEntrées" layoutY="132.0" prefHeight="39.0" prefWidth="191.0">
+      <TextField fx:id="tFpseudoBlanc" layoutX="300.0" layoutY="132.0" onKeyReleased="#validerEntrées" prefHeight="39.0" prefWidth="191.0" promptText="Entrez un pseudo">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="tFpseudoNoir" promptText="Entrez un autre pseudo" layoutX="300.0" onKeyReleased="#validerEntrées" layoutY="227.0" prefHeight="39.0" prefWidth="191.0">
+      <TextField fx:id="tFpseudoNoir" layoutX="300.0" layoutY="227.0" onKeyReleased="#validerEntrées" prefHeight="39.0" prefWidth="191.0" promptText="Entrez un autre pseudo">
          <font>
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </TextField>
+      <Label fx:id="lblEnonce" alignment="CENTER" layoutX="43.0" layoutY="78.0" prefHeight="39.0" prefWidth="524.0" text="Entrez deux différents pseudos composez uniquement de lettre(s) ou de chiffre(s)">
+         <font>
+            <Font name="Comic Sans MS" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
