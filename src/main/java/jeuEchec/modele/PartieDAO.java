@@ -47,6 +47,7 @@ public class PartieDAO extends DAO<Partie> {
      */
     @Override
     public Partie créer(Partie objet) throws DAOException {
+        Partie partie=null;
         try{
             Connection conn=SQLConnectionFactory.getConnection();
 
@@ -56,9 +57,8 @@ public class PartieDAO extends DAO<Partie> {
             stmt.setString(3, objet.getJoueurNoir().getPseudo());
             stmt.setString(4, objet.getMouvements());
             stmt.execute();
-            Partie  partie=lire(objet.getIdPartie());
+            partie=lire(objet.getIdPartie());
             return partie;
-
         }
         catch(SQLException e){
             throw new DAOException(e);
