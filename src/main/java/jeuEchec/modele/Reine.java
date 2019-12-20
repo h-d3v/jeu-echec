@@ -6,11 +6,12 @@ public class Reine extends Piece {
     /**
      * Constructeur
      *
-
+     * @param uneCoordoneeX
+     * @param uneCoordonneeY
      * @param uneCouleur
      */
-    Reine(Couleur uneCouleur) {
-        super(uneCouleur);
+    Reine(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
+        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
     }
 
     /**
@@ -36,7 +37,7 @@ public class Reine extends Piece {
 
     @Override
     public String toString() {
-        if (this.getCouleur().equals(Couleur.BLANC)){
+        if (this.getcouleur().equals(Couleur.BLANC)){
             return "\u2655";
         }else{
             return "\u265B";

@@ -10,7 +10,7 @@ public class Case {
      * @param x
      * @param y
      */
-   public Case(int x, int y){
+    public Case(int x, int y){
         this.x=x;
         this.y=y;
         piece=null;
@@ -48,8 +48,6 @@ public class Case {
         assert piece!=null;
         this.piece = piece;
     }
-
-
 
 
 

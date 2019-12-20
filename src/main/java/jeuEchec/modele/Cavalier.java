@@ -7,11 +7,12 @@ public class Cavalier extends Piece {
     /**
      * Constructeur
      *
-
+     * @param uneCoordoneeX
+     * @param uneCoordonneeY
      * @param uneCouleur
      */
-    public Cavalier(Couleur uneCouleur){
-        super(uneCouleur);
+    public Cavalier(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur){
+        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
     }
 
 
@@ -38,7 +39,7 @@ public class Cavalier extends Piece {
 
     @Override
     public String toString() {
-        if (this.getCouleur().equals(Couleur.BLANC)){
+        if (this.getcouleur().equals(Couleur.BLANC)){
             return "\u2658";
         }else{
             return "\u265E";

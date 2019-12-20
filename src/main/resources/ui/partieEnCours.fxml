@@ -1,112 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.TilePane?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 
 
-<AnchorPane fx:id="vuePartie" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" fx:controller="jeuEchec.ControleurPartieEnCours" prefWidth="726.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeuEchec.ControleurPartieEnCours">
    <children>
-      <TilePane fx:id="tpEchequierPartie" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="531.0">
+      <GridPane id="grille" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <Rectangle fx:id="c07" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c17" accessibleText="♙" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c27" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c37" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c47" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c57" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c67" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c77" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c06" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c16" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c26" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c36" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c46" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c56" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c66" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c76" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c05" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c15" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c25" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c35" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c45" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c55" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c65" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c75" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c04" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c24" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c34" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c44" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c54" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c64" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c74" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c03" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c13" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c23" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c33" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c43" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c53" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c63" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c73" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c02" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c12" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c22" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c32" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c42" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c52" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c62" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c72" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c01" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c11" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c21" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c31" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c41" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c51" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c61" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c71" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c00" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c10" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c20" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c30" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c40" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c50" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c60" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c70" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK"  strokeType="INSIDE" width="66.0" />
+            <Button id="01" fx:id="c01" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button id="44" fx:id="c44" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Button id="03" fx:id="c03" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="3" />
+            <Button id="21" fx:id="c21" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button id="16" fx:id="c16" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button id="14" fx:id="c14" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button id="12" fx:id="c12" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button id="10" fx:id="c10" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.rowIndex="1" />
+            <Button id="07" fx:id="c07" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="7" />
+            <Button id="05" fx:id="c05" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="5" />
+            <Button id="34" fx:id="c34" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Button id="30" fx:id="c30" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.rowIndex="3" />
+            <Button id="27" fx:id="c27" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Button id="25" fx:id="c25" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Button id="23" fx:id="c23" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button id="47" fx:id="c47" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Button id="45" fx:id="c45" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Button id="43" fx:id="c43" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Button id="41" fx:id="c41" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button id="36" fx:id="c36" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Button id="65" fx:id="c65" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Button id="63" fx:id="c63" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Button id="61" fx:id="c61" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Button id="56" fx:id="c56" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Button id="54" fx:id="c54" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Button id="52" fx:id="c52" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Button id="50" fx:id="c50" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.rowIndex="5" />
+            <Button id="74" fx:id="c74" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <Button id="72" fx:id="c72" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Button id="70" fx:id="c70" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.rowIndex="7" />
+            <Button id="67" fx:id="c67" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+            <Button id="32" fx:id="c32" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button id="76" fx:id="c76" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #9D571B;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+            <Button id="42" fx:id="c42" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button id="40" fx:id="c40" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.rowIndex="4" />
+            <Button id="37" fx:id="c37" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Button id="35" fx:id="c35" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Button id="33" fx:id="c33" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button id="06" fx:id="c06" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="6" />
+            <Button id="31" fx:id="c31" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button id="26" fx:id="c26" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Button id="24" fx:id="c24" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button id="20" fx:id="c20" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.rowIndex="2" />
+            <Button id="22" fx:id="c22" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button id="15" fx:id="c15" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button id="17" fx:id="c17" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button id="13" fx:id="c13" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button id="11" fx:id="c11" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button id="04" fx:id="c04" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="4" />
+            <Button id="02" fx:id="c02" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="2" />
+            <Button id="60" fx:id="c60" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.rowIndex="6" />
+            <Button id="57" fx:id="c57" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <Button id="46" fx:id="c46" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Button id="55" fx:id="c55" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Button id="53" fx:id="c53" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Button id="51" fx:id="c51" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button id="77" fx:id="c77" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            <Button id="75" fx:id="c75" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <Button id="73" fx:id="c73" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Button id="71" fx:id="c71" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Button id="66" fx:id="c66" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <Button id="64" fx:id="c64" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Button id="62" fx:id="c62" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Button id="00" fx:id="c00" alignment="CENTER"  minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" />
          </children>
-      </TilePane>
-      <Button fx:id="btnPausePartie" layoutX="568.0" layoutY="317.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" text="Pause">
-         <font>
-            <Font name="Comic Sans MS" size="13.0" />
-         </font>
-      </Button>
-      <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="540.0" layoutY="138.0" prefHeight="64.0" prefWidth="177.0" style="-fx-border-color: black;" text="Tour De" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
-         <font>
-            <Font name="Comic Sans MS" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbNomJoueurTour" alignment="CENTER" contentDisplay="CENTER" layoutX="546.0" layoutY="164.0" prefHeight="38.0" prefWidth="165.0" text="NomJoueur">
-         <font>
-            <Font name="Comic Sans MS" size="14.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnAbondonPartie" layoutX="562.0" layoutY="374.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="133.0" text="J'abandonne">
-         <font>
-            <Font name="Comic Sans MS" size="13.0" />
-         </font>
-      </Button>
-      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="552.0" layoutY="10.0" prefHeight="72.0" prefWidth="154.0" style="-fx-border-color: black;" text="Temps Partie">
-         <font>
-            <Font name="Comic Sans MS" size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbTempsPartie" layoutX="609.0" layoutY="46.0" text="Temps">
-         <font>
-            <Font name="Comic Sans MS" size="13.0" />
-         </font>
-      </Label>
+      </GridPane>
+      <VBox prefHeight="600.0" prefWidth="300.0">
+         <children>
+            <Label fx:id="joueurBlanc" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="157.0" prefWidth="300.0" style="-fx-border-color: red;" text="JoueurBlanc">
+               <VBox.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="joueurNoir" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="157.0" prefWidth="300.0" style="-fx-border-color: green;" text="JoueurNoir">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblTemps" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="157.0" prefWidth="300.0" style="-fx-border-color: lightgrey;" text="Temps">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="132.0" prefWidth="300.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="141.0" text="Pause" />
+                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="141.0" text="J'ai perdu !!">
+                     <HBox.margin>
+                        <Insets left="22.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
-</AnchorPane>
+</HBox>

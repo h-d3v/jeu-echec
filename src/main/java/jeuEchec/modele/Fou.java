@@ -7,11 +7,12 @@ public class Fou extends Piece {
     /**
      * Constructeur
      *
-
+     * @param uneCoordoneeX
+     * @param uneCoordonneeY
      * @param uneCouleur
      */
-    Fou(Couleur uneCouleur) {
-        super(uneCouleur);
+    Fou(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
+        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
     }
 
     /**
@@ -37,7 +38,7 @@ public class Fou extends Piece {
 
     @Override
     public String toString() {
-        if (this.getCouleur().equals(Couleur.BLANC)) {
+        if (this.getcouleur().equals(Couleur.BLANC)) {
             return "\u2657";
         } else {
             return "\u265D";
