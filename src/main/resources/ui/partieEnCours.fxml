@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="vuePartie" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="vuePartie" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" fx:controller="jeuEchec.ControleurPartieEnCours" prefWidth="726.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TilePane fx:id="tpEchequierPartie" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="531.0">
          <children>
@@ -75,7 +75,7 @@
             <Rectangle fx:id="c40" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
             <Rectangle fx:id="c50" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
             <Rectangle fx:id="c60" arcHeight="5.0" arcWidth="5.0" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-            <Rectangle fx:id="c70" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+            <Rectangle fx:id="c70" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" stroke="BLACK"  strokeType="INSIDE" width="66.0" />
          </children>
       </TilePane>
       <Button fx:id="btnPausePartie" layoutX="568.0" layoutY="317.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" text="Pause">

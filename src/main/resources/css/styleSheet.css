@@ -1,0 +1,11 @@
+#btnJouer:hover{
+    -fx-text-fill:darkblue;
+    -fx-font-weight:bold;
+    -fx-border-color: darkblue;
+}
+
+#btnQuitter:hover{
+    -fx-text-fill:darkblue;
+    -fx-font-weight:bold;
+    -fx-border-color: darkblue;
+}

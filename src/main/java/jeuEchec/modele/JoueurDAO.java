@@ -16,6 +16,7 @@ public class JoueurDAO extends DAO<Joueur> {
      */
     @Override
     public Joueur lire(Object id) throws DAOException {
+        Joueur unJoueur=null;
         try{
             Connection conn=SQLConnectionFactory.getConnection();
 
@@ -23,20 +24,19 @@ public class JoueurDAO extends DAO<Joueur> {
             stmt.setString(1, (String) id);
             ResultSet rs = stmt.executeQuery();
 
-            Joueur unJoueur=null;
             if(rs.next()){
                 unJoueur=new Joueur((String)id);
             }
 
             rs.close();
             conn.close();
-            return unJoueur;
+
         }
         catch(SQLException e){
             throw new DAOException(e);
         }
 
-
+        return unJoueur;
     }
 
 
@@ -57,14 +57,13 @@ public class JoueurDAO extends DAO<Joueur> {
             stmt.setString(1, joueur.getPseudo());
             stmt.execute();
 
-            unJoueur=lire(joueur.getPseudo());
-
             conn.close();
 
         }
         catch(SQLException e){
             throw new DAOException(e);
         }
+        unJoueur=lire(joueur.getPseudo());
         return unJoueur;
 
     }
@@ -120,9 +119,9 @@ public class JoueurDAO extends DAO<Joueur> {
             Connection conn=SQLConnectionFactory.getConnection();
             PartieDAO partieDAO=new PartieDAO();
             //partieDAO.supprimer(new Partie(1,new Joueur(""),new Joueur(""), ""));
-            for(Partie partie : partieDAO.chercherParJoueur(joueur)){
+            /*for(Partie partie : partieDAO.chercherParJoueur(joueur)){
                 partieDAO.supprimer(partie);
-            }
+            }*/
             PreparedStatement stmt = conn.prepareStatement("DELETE FROM Joueur WHERE pseudo=?");
             stmt.setString(1, joueur.getPseudo());
 

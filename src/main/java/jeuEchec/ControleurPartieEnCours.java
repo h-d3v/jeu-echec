@@ -1,6 +1,5 @@
 package jeuEchec;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,12 +12,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControleurMenuPrincipal implements Initializable {
+public class ControleurPartieEnCours implements Initializable {
+
     protected Stage parent;
     protected ResourceBundle resources;
     protected Modele modele;
 
-    public ControleurMenuPrincipal() {
+    public ControleurPartieEnCours() {
     }
 
     @FXML
@@ -30,12 +30,6 @@ public class ControleurMenuPrincipal implements Initializable {
         Parent root=loader.load();
         parent.setScene(new Scene(root));
         ((ControleurNouvellePartie)loader.getController()).setParent(parent);
-
-    }
-
-    @FXML
-    public void quitter(){
-        Platform.exit();
     }
 
     public void setParent(Stage parent) {
