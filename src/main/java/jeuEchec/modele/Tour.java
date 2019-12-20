@@ -7,10 +7,12 @@ public class Tour extends Piece {
     /**
      * Constructeur
      *
-
+     * @param uneCoordoneeX
+     * @param uneCoordonneeY
+     * @param uneCouleur
      */
-    Tour(Couleur uneCouleur) {
-        super(uneCouleur);
+    Tour(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
+        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
         premierMouvement=true;
     }
     /**
@@ -48,10 +50,13 @@ public class Tour extends Piece {
      * @return ArrayList<int [ ]>
      */
     @Override
-    public ArrayList<int[]> mouvements(Echiquier unEchiquier) { return null; }
+    public ArrayList<int[]> mouvements(Echiquier unEchiquier) {
+        return null;
+    }
+
     @Override
     public String toString() {
-        if (this.getCouleur().equals(Couleur.BLANC)){
+        if (this.getcouleur().equals(Couleur.BLANC)){
             return "\u2656";
         }else{
             return "\u265C";

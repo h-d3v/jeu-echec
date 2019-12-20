@@ -7,11 +7,12 @@ public class Pion extends Piece {
     /**
      * Constructeur
      *
-
+     * @param uneCoordoneeX
+     * @param uneCoordonneeY
      * @param uneCouleur
      */
-    Pion(Couleur uneCouleur) {
-        super(uneCouleur);
+    Pion(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
+        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
         premierMouvement=true;
     }
 
@@ -55,7 +56,7 @@ public class Pion extends Piece {
     }
     @Override
     public String toString() {
-        if (this.getCouleur().equals(Couleur.BLANC)) {
+        if (this.getcouleur().equals(Couleur.BLANC)) {
             return "\u2659";
         } else {
             return "\u265F";

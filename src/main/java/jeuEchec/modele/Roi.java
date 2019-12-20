@@ -7,11 +7,12 @@ public class Roi extends Piece {
     /**
      * Constructeur
      *
-
+     * @param uneCoordoneeX
+     * @param uneCoordonneeY
      * @param uneCouleur
      */
-    Roi(Couleur uneCouleur) {
-        super(uneCouleur);
+    Roi(int uneCoordoneeX, int uneCoordonneeY, Couleur uneCouleur) {
+        super(uneCoordoneeX, uneCoordonneeY, uneCouleur);
         premierMouvement=true;
     }
     /**
@@ -55,7 +56,7 @@ public class Roi extends Piece {
 
     @Override
     public String toString() {
-        if (this.getCouleur().equals(Couleur.BLANC)){
+        if (this.getcouleur().equals(Couleur.BLANC)){
             return "\u2654";
         }else{
             return "\u265A";
