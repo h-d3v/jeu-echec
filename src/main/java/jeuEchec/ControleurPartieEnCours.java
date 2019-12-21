@@ -168,16 +168,11 @@ public class ControleurPartieEnCours implements Initializable {
     Echiquier echiquier= new Echiquier();
 
 
+    /**
+     * Constructeur du controlleur
+     */
     public ControleurPartieEnCours() {
     }
-
-
-
-
-    @FXML
-    private void initilaliser(){
-    }
-
 
 
     /*@FXML
@@ -217,7 +212,7 @@ public class ControleurPartieEnCours implements Initializable {
             }
         }
     }
-
+*/
     /**
      * Mutateur du parent du controlleur
      * @param parent
@@ -226,6 +221,29 @@ public class ControleurPartieEnCours implements Initializable {
         this.parent = parent;
     }
 
+    /**
+     * Arrette la partie courrante et retourne au menu principal
+     * @throws IOException
+     */
+    @FXML
+    public void abandonner() throws IOException, DAOException {
+        //modele.arreterPartieCourrante();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Partie abondonner");
+        alert.setHeaderText("Vous avez abondonner la partie");
+        alert.setContentText("Vous serez retourner au menu principal");
+        alert.showAndWait();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/menuPrincipal.fxml"));
+        Parent root=loader.load();
+        ((ControleurMenuPrincipal)loader.getController()).setParent(parent);
+        parent.setScene(new Scene(root));
+    }
+
+    /**
+     * Initialise le controleur quand il
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -1413,15 +1431,6 @@ public class ControleurPartieEnCours implements Initializable {
         }
     }
 
-    public void setParent(Stage parent) {
-        this.parent = parent;
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.resources=resourceBundle;
-        initilaliser();
-    }
 
     /**
      * mutateur du modele du controlleur
