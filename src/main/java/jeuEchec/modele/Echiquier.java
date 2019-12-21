@@ -12,7 +12,7 @@ public class Echiquier {
         //Pions noirs
         int j=0;
         for (int i = 0; i <8 ; i++) {
-            pieces[i]=new Pion(1,j, Couleur.BLANC);
+            pieces[i]=new Pion(1,i, Couleur.NOIR);
         }
         pieces[8]= new Tour(0,0,Couleur.NOIR);
         pieces[9]=new Tour(0,7,Couleur.NOIR);
@@ -44,16 +44,16 @@ public class Echiquier {
         return pieces;
     }
 
-    public String getPieceParCoordonne(String unCoordonnne){
-        String coordonnees="";
+    public Piece getPieceParCoordonnees(String unCoordonnne){
+        Piece pieceCherchee=null;
         for(Piece piece : pieces){
             if(piece.getCoordonneesEnString().equals(unCoordonnne)){
-                coordonnees=piece.getCoordonneesEnString();
+                pieceCherchee=piece;
                 break;
             }
         }
 
-        return coordonnees;
+        return pieceCherchee;
     }
 
 
@@ -71,6 +71,8 @@ public class Echiquier {
 
 
 
+
+
     public void jouerCoup(Piece piece, int xDestination, int yDestination){
         assert piece!=null;
         assert (xDestination<=7 && xDestination>0);
@@ -78,11 +80,13 @@ public class Echiquier {
         Couleur couleurPiece=piece.getcouleur();
         Piece pieceDestination=getPieceParCoordonnees(xDestination, yDestination);
 
-        if(pieceDestination!=null&& pieceDestination.getcouleur()!=piece.getcouleur()){
+        if(pieceDestination!=null&& pieceDestination.getcouleur()!=couleurPiece){
+
             pieceDestination=null;
             piece.setCoordonees(xDestination,yDestination);
-
-
+        }
+        else{
+            piece.setCoordonees(xDestination,yDestination);
         }
     }
 

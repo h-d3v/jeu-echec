@@ -30,6 +30,7 @@ public class Modele {
         listeParties.add(unePartie);
     }
 
+
     /**
      * Mutateur de la note courante
      * @param deuxJoueurs les joueurs de la partie courrante
