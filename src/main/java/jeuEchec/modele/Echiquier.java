@@ -40,22 +40,33 @@ public class Echiquier {
 
     }
 
+    /**
+     *
+     * @return pieces les pieces de la partie
+     */
     public Piece[] getPieces() {
         return pieces;
     }
 
-    public String getPieceParCoordonne(String unCoordonnne){
-        String coordonnees="";
+    public Piece getPieceParCoordonnees(String unCoordonnne){
+        Piece pieceCherchee=null;
         for(Piece piece : pieces){
             if(piece.getCoordonneesEnString().equals(unCoordonnne)){
-                coordonnees=piece.getCoordonneesEnString();
+                pieceCherchee=piece;
                 break;
             }
         }
 
-        return coordonnees;
+        return pieceCherchee;
     }
 
+
+    /**
+     *
+     * @param x coordonnee longitude
+     * @param y coordonnee latitude
+     * @return la piece, null si pas de piece a cette coordonnee
+     */
 
     public Piece getPieceParCoordonnees(int x, int y){
         Piece piece=null;
@@ -69,7 +80,12 @@ public class Echiquier {
     }
 
 
-
+    /**
+     *
+     * @param piece la piece de depart
+     * @param xDestination la longitude de la case de destination
+     * @param yDestination la latitude de la case de destination
+     */
 
     public void jouerCoup(Piece piece, int xDestination, int yDestination){
         assert piece!=null;
@@ -78,8 +94,12 @@ public class Echiquier {
         Couleur couleurPiece=piece.getcouleur();
         Piece pieceDestination=getPieceParCoordonnees(xDestination, yDestination);
 
-        if(pieceDestination!=null&& pieceDestination.getcouleur()!=piece.getcouleur()){
+        if(pieceDestination!=null&& pieceDestination.getcouleur()!=couleurPiece){
+
             pieceDestination=null;
+            piece.setCoordonees(xDestination,yDestination);
+        }
+        else{
             piece.setCoordonees(xDestination,yDestination);
         }
     }
