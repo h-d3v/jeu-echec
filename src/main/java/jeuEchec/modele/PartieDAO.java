@@ -11,22 +11,25 @@ public class PartieDAO extends DAO<Partie> {
     /**
      * Lit un objet à partir de son id
      *
-     * @param id L'identifiant unique de l'objet à lire
+     * @param unePartie La partie  lire
      * @return l'objet lu ou null si l'objet n'a pu être lu
      */
     @Override
-    public Partie lire(Object id) throws DAOException {
+    public Partie lire(Partie unePartie) throws DAOException {
         try{
             Connection conn=SQLConnectionFactory.getConnection();
 
             PreparedStatement stmt = conn.prepareStatement("SELECT id, pseudoJoueurBlancs, pseudoJoueurNoirs, mouvements, estTerminee, temps, vainqueur FROM Partie WHERE id = ?");
-            stmt.setInt(1, (Integer) id);
+            stmt.setInt(1, unePartie.getIdPartie());
             ResultSet rs = stmt.executeQuery();
 
             Partie partie=null;
             if(rs.next()){
                 JoueurDAO joueurDAO=new JoueurDAO();
-                partie=new Partie((Integer)id, joueurDAO.lire(rs.getString("pseudoJoueurBlancs")), joueurDAO.lire(rs.getString("pseudoJoueurNoirs")), rs.getString("mouvements"));
+                Joueur jBlanc=new Joueur(rs.getString("pseudoJoueurBlancs"));
+                Joueur jNoir=new Joueur(rs.getString("pseudoJoueurNoirs"));
+                System.out.println(unePartie.getIdPartie());
+                partie=new Partie(unePartie.getIdPartie(), joueurDAO.lire(jBlanc), joueurDAO.lire(jNoir), rs.getString("mouvements"));
             }
 
             rs.close();
@@ -46,23 +49,23 @@ public class PartieDAO extends DAO<Partie> {
      * @return l'objet tel qu'il a été créé dans la source de données
      */
     @Override
-    public Partie créer(Partie objet) throws DAOException {
-        Partie partie=null;
+    public boolean créer(Partie objet) throws DAOException {
+        boolean executé=false;
         try{
             Connection conn=SQLConnectionFactory.getConnection();
 
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO Partie(id, pseudoJoueurBlancs, pseudoJoueurNoirs, mouvements) VALUES (?,?,?,?)");
-            stmt.setInt(1, objet.getIdPartie());
-            stmt.setString(2,objet.getJoueurBlanc().getPseudo());
-            stmt.setString(3, objet.getJoueurNoir().getPseudo());
-            stmt.setString(4, objet.getMouvements());
-            stmt.execute();
-            partie=lire(objet.getIdPartie());
-            return partie;
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO Partie(id, pseudoJoueurBlancs, pseudoJoueurNoirs, mouvements) VALUES (NULL,?,?,?)");
+            stmt.setString(1,objet.getJoueurBlanc().getPseudo());
+            stmt.setString(2, objet.getJoueurNoir().getPseudo());
+            stmt.setString(3, objet.getMouvements());
+            executé=stmt.execute();
+            stmt.close();
+            conn.close();
         }
         catch(SQLException e){
             throw new DAOException(e);
         }
+        return  executé;
     }
 
     /**
@@ -82,7 +85,7 @@ public class PartieDAO extends DAO<Partie> {
             stmt.setString(2, objet.getJoueurNoir().getPseudo());
             stmt.setString(3, objet.getMouvements());
             stmt.execute();
-            Partie partie=lire(objet.getIdPartie());
+            Partie partie=lire(objet);
             return partie;
 
         }
@@ -135,7 +138,7 @@ public class PartieDAO extends DAO<Partie> {
 
             while (rs.next()){
                 JoueurDAO joueurDAO=new JoueurDAO();
-                parties.add(new Partie(rs.getInt("id"), joueurDAO.lire(rs.getString("pseudoJoueurBlancs")), joueurDAO.lire(rs.getString("pseudoJoueurNoirs")), rs.getString("mouvements")));
+                parties.add(new Partie(rs.getInt("id"), joueurDAO.lire(new Joueur(rs.getString("pseudoJoueurBlancs"))), joueurDAO.lire(new Joueur(rs.getString("pseudoJoueurNoirs"))), rs.getString("mouvements")));
             }
 
             rs.close();
@@ -165,7 +168,7 @@ public class PartieDAO extends DAO<Partie> {
 
             while (rs.next()){
                 JoueurDAO joueurDAO=new JoueurDAO();
-                parties.add(new Partie(rs.getInt("id"), joueurDAO.lire(rs.getString("pseudoJoueurBlancs")), joueurDAO.lire(rs.getString("pseudoJoueurNoirs")), rs.getString("mouvements")));
+                parties.add(new Partie(rs.getInt("id"), joueurDAO.lire(new Joueur(rs.getString("pseudoJoueurBlancs"))), joueurDAO.lire(new Joueur(rs.getString("pseudoJoueurNoirs"))), rs.getString("mouvements")));
             }
 
             rs.close();

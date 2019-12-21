@@ -19,11 +19,5 @@ public class testCara {
         }
 
 
-        try {
-            System.out.println(joueurDAO.créer(new Joueur("nouveauJoueur")).getPseudo());
-
-        } catch (DAOException e) {
-            e.printStackTrace();
-        }
     }
 }

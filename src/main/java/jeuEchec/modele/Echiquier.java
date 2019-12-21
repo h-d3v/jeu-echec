@@ -12,7 +12,7 @@ public class Echiquier {
         //Pions noirs
         int j=0;
         for (int i = 0; i <8 ; i++) {
-            pieces[i]=new Pion(1,j, Couleur.BLANC);
+            pieces[i]=new Pion(1,i, Couleur.NOIR);
         }
         pieces[8]= new Tour(0,0,Couleur.NOIR);
         pieces[9]=new Tour(0,7,Couleur.NOIR);
@@ -81,10 +81,6 @@ public class Echiquier {
         if(pieceDestination!=null&& pieceDestination.getcouleur()!=piece.getcouleur()){
             pieceDestination=null;
             piece.setCoordonees(xDestination,yDestination);
-
-
         }
     }
-
-
 }
