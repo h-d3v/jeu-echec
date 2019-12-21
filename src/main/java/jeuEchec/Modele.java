@@ -33,6 +33,28 @@ public class Modele {
 
 
     /**
+     *
+     * @return la partie courrante
+     */
+    public Partie getPartieCourrante() {
+        return partieCourrante;
+    }
+
+    /**
+     * Mutateur de la partie courrante
+     * @param partieCourrante
+     */
+    public void setPartieCourrante(Partie partieCourrante) {
+        this.partieCourrante = partieCourrante;
+    }
+
+    public void arreterPartieCourrante() throws DAOException {
+        assert(partieCourrante.getJoueurGagnant()!=null);
+        partieCourrante.terminerPartie(partieCourrante.getJoueurGagnant());
+        partieDao.modifier(partieCourrante);
+    }
+
+    /**
      * Mutateur de la note courante
      * @param deuxJoueurs les joueurs de la partie courrante
      */

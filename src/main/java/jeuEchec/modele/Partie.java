@@ -26,8 +26,7 @@ public class Partie {
         assert joueurNoir!=null;
         idPartie=compteur;
         compteur++;
-        tempsPartie=Stopwatch.createUnstarted();
-        tempsPartie.start();
+        tempsPartie=Stopwatch.createStarted();
         this.joueurBlanc=joueurBlanc;
         this.joueurNoir=joueurNoir;
         this.echiquier=new Echiquier();
@@ -82,7 +81,7 @@ public class Partie {
      *
      * @return joueurGagant Joueur
      */
-    public Joueur getJoueurGagant() {
+    public Joueur getJoueurGagnant() {
         return joueurGagant;
     }
 
@@ -133,9 +132,7 @@ public class Partie {
      *
      * @param estTerminee
      */
-    public void setEstTerminee(boolean estTerminee) {
-        this.estTerminee = estTerminee;
-    }
+
 
     /**
      *
@@ -177,4 +174,16 @@ public class Partie {
         this.mouvements = mouvements;
     }
 
-}
+    /**
+     * termine la partie passer en parametre
+     * @param joueurGagant le joueur gagnant
+     */
+    public void terminerPartie(Joueur joueurGagant){
+            assert(!this.estTerminee());
+            assert(joueurGagant!=null);
+            this.estTerminee = estTerminee;
+            this.joueurGagant=joueurGagant;
+            tempsPartie.stop();
+        }
+    }
+

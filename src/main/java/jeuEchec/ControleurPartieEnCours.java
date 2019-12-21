@@ -12,19 +12,21 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import jeuEchec.modele.Echiquier;
-import jeuEchec.modele.Piece;
+import jeuEchec.modele.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ControleurPartieEnCours implements Initializable {
     protected Stage parent;
     ResourceBundle resources;
     protected Modele modele;
     protected String caseDepart, caseDestination;
+    protected double temps;
 
     @FXML
     private Button c00;
@@ -1420,5 +1422,15 @@ public class ControleurPartieEnCours implements Initializable {
         this.resources=resourceBundle;
         initilaliser();
     }
+
+    /**
+     * mutateur du modele du controlleur
+     * @param modele
+     */
+    public void setModele(Modele modele) {
+        this.modele = modele;
+    }
+
+
 }
 
