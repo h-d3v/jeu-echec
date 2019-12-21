@@ -121,7 +121,7 @@
                         <Font name="Comic Sans MS" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblTourJoueur" alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="87.0" prefHeight="23.0" prefWidth="147.0" text="joueur">
+                  <Label fx:id="lblTourJoueur" alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" accessibleText="Blanc" layoutY="87.0" prefHeight="23.0" prefWidth="147.0" text="joueur">
                      <font>
                         <Font name="Comic Sans MS" size="13.0" />
                      </font>

@@ -16,10 +16,8 @@ import jeuEchec.modele.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class ControleurPartieEnCours implements Initializable {
     protected Stage parent;
@@ -27,6 +25,9 @@ public class ControleurPartieEnCours implements Initializable {
     protected Modele modele;
     protected String caseDepart, caseDestination;
     protected double temps;
+
+    @FXML
+    private Label lblTourJoueur;
 
     @FXML
     private Button c00;
@@ -1438,6 +1439,18 @@ public class ControleurPartieEnCours implements Initializable {
      */
     public void setModele(Modele modele) {
         this.modele = modele;
+    }
+
+    /**
+     * Change le tour du joueur present et
+     * le label
+     */
+    @FXML
+    public void setTourJoueur(Couleur blancOuNoir){
+        if(blancOuNoir==Couleur.BLANC){
+            lblTourJoueur.setText(modele.partieCourrante.getJoueurBlanc().getPseudo());
+        }
+        else{lblTourJoueur.setText(modele.partieCourrante.getJoueurNoir().getPseudo());}
     }
 
 }

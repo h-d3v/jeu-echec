@@ -115,7 +115,7 @@ public class ControleurNouvellePartie implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/partieEnCours.fxml"));
         Parent root=loader.load();
         ((ControleurPartieEnCours)loader.getController()).setParent(parent);
-        ((ControleurPartieEnCours)loader.getController()).setModele(this.modele);
+        ((ControleurPartieEnCours)loader.getController()).setModele(modele);
         parent.setScene(new Scene(root));
         parent.setTitle(joueurBlanc.getPseudo()+" VS "+joueurNoir.getPseudo());
     }
