@@ -16,10 +16,8 @@ import jeuEchec.modele.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 public class ControleurPartieEnCours implements Initializable {
     protected Stage parent;
@@ -27,6 +25,9 @@ public class ControleurPartieEnCours implements Initializable {
     protected Modele modele;
     protected String caseDepart, caseDestination;
     protected double temps;
+
+    @FXML
+    private Label lblTourJoueur;
 
     @FXML
     private Button c00;
@@ -168,16 +169,11 @@ public class ControleurPartieEnCours implements Initializable {
     Echiquier echiquier= new Echiquier();
 
 
+    /**
+     * Constructeur du controlleur
+     */
     public ControleurPartieEnCours() {
     }
-
-
-
-
-    @FXML
-    private void initilaliser(){
-    }
-
 
 
     /*@FXML
@@ -217,7 +213,7 @@ public class ControleurPartieEnCours implements Initializable {
             }
         }
     }
-
+*/
     /**
      * Mutateur du parent du controlleur
      * @param parent
@@ -226,6 +222,29 @@ public class ControleurPartieEnCours implements Initializable {
         this.parent = parent;
     }
 
+    /**
+     * Arrette la partie courrante et retourne au menu principal
+     * @throws IOException
+     */
+    @FXML
+    public void abandonner() throws IOException, DAOException {
+        //modele.arreterPartieCourrante();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Partie abondonner");
+        alert.setHeaderText("Vous avez abondonner la partie");
+        alert.setContentText("Vous serez retourner au menu principal");
+        alert.showAndWait();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/menuPrincipal.fxml"));
+        Parent root=loader.load();
+        ((ControleurMenuPrincipal)loader.getController()).setParent(parent);
+        parent.setScene(new Scene(root));
+    }
+
+    /**
+     * Initialise le controleur quand il
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -1413,15 +1432,6 @@ public class ControleurPartieEnCours implements Initializable {
         }
     }
 
-    public void setParent(Stage parent) {
-        this.parent = parent;
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.resources=resourceBundle;
-        initilaliser();
-    }
 
     /**
      * mutateur du modele du controlleur
@@ -1431,6 +1441,17 @@ public class ControleurPartieEnCours implements Initializable {
         this.modele = modele;
     }
 
+    /**
+     * Change le tour du joueur present et
+     * le label
+     */
+    @FXML
+    public void setTourJoueur(Couleur blancOuNoir){
+        if(blancOuNoir==Couleur.BLANC){
+            lblTourJoueur.setText(modele.partieCourrante.getJoueurBlanc().getPseudo());
+        }
+        else{lblTourJoueur.setText(modele.partieCourrante.getJoueurNoir().getPseudo());}
+    }
 
 }
 
