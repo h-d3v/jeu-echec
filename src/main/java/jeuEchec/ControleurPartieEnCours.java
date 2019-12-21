@@ -2,13 +2,19 @@ package jeuEchec;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import jeuEchec.modele.Echiquier;
 import jeuEchec.modele.Piece;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -16,6 +22,8 @@ public class ControleurPartieEnCours implements Initializable {
     protected Stage parent;
     ResourceBundle resources;
     protected Modele modele;
+    protected String caseDepart, caseDestination;
+
     @FXML
     private Button c00;
     @FXML
@@ -164,6 +172,58 @@ public class ControleurPartieEnCours implements Initializable {
 
     @FXML
     private void initilaliser(){
+    }
+
+
+
+    /*@FXML
+    private void selectionerDestination(){
+
+         if(evt.getTarget()==c11){
+             piece=c11.getId();
+             echiquier.getPieces()[11].setCoordonees(1,1);
+         }
+
+    }*/
+    /*@FXML
+    private void atterrir(ActionEvent evt){
+        System.out.println("ddd");
+        if(evt.getTarget()==c66){
+            c66.setText(piece);
+        }
+    }
+    */
+    //boolean decoller=true;
+    /*@FXML
+    private void jouerCoup(ActionEvent evt){
+        String pieceId;
+        if (decoller) {
+            if (evt.getTarget() == c11){
+                pieceId = c11.getId();
+                System.out.println("ddd");
+                decoller=false;
+            }
+        }
+        else {
+            if(evt.getTarget()==c66){
+                echiquier.getPieces()[0].setCoordonees(2,6);
+                System.out.println("nvbnvnv");
+                decoller=true;
+                initilaliser();
+            }
+        }
+    }
+
+    /**
+     * Mutateur du parent du controlleur
+     * @param parent
+     */
+    public void setParent(Stage parent) {
+        this.parent = parent;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
         Piece[] pieces =echiquier.getPieces();
 
@@ -363,62 +423,27 @@ public class ControleurPartieEnCours implements Initializable {
             }
             else if(piece.getCoordonneesEnString().equals(c77.getId())){
                 c77.setText(piece.toString());
-
-
             }
 
         }
-
-    }
-
-
-
-  /*  @FXML
-    private void decoller(ActionEvent evt){
-
-         if(evt.getTarget()==c11){
-             piece=c11.getId();
-             echiquier.getPieces()[11].setCoordonees(1,1);
-         }
-
-    }
-    @FXML
-    private void atterrir(ActionEvent evt){
-        System.out.println("ddd");
-        if(evt.getTarget()==c66){
-            c66.setText(piece);
-        }
-    }
-    */
-
-    boolean decoller=true;
-    @FXML
-    private void jouerCoup(ActionEvent evt){
-        String pieceId;
-        if (decoller) {
-            if (evt.getTarget() == c11){
-                pieceId = c11.getId();
-                System.out.println("ddd");
-                decoller=false;
-            }
-        }
-        else {
-            if(evt.getTarget()==c66){
-                echiquier.getPieces()[0].setCoordonees(2,6);
-                System.out.println("nvbnvnv");
-                decoller=true;
-                initilaliser();
-            }
-        }
-    }
-
-    public void setParent(Stage parent) {
-        this.parent = parent;
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
         this.resources=resourceBundle;
+    }
+
+    /**
+     * Arrette la partie courrante et retourne au menu principal
+     * @throws IOException
+     */
+    @FXML
+    public void abandonner() throws IOException {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Partie abondonner");
+        alert.setHeaderText("Vous avez abondonner la partie");
+        alert.setContentText("Vous serez retourner au menu principal");
+        alert.showAndWait();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/menuPrincipal.fxml"));
+        Parent root=loader.load();
+        ((ControleurMenuPrincipal)loader.getController()).setParent(parent);
+        parent.setScene(new Scene(root));
     }
 }
 

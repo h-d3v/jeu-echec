@@ -110,8 +110,8 @@ public class ControleurNouvellePartie implements Initializable {
         //cree la nouvelle partie
         Partie partie=new Partie(joueurBlanc, joueurNoir);
 
-       // modele.ajouterPartie(partie);
-
+        modele.ajouterPartie(partie);
+        modele.partieCourrante=partie;
         //on charge l'affichage de la nouvelle partie
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/partieEnCours.fxml"));
         Parent root=loader.load();

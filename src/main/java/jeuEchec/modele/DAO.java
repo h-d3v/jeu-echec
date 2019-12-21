@@ -15,7 +15,7 @@ public abstract class DAO<T> {
      * @return l'objet lu ou null si l'objet n'a pu être lu
      *
      */
-    public abstract T lire(Object id) throws DAOException;
+    public abstract T lire(T id) throws DAOException;
 
     /**
      * Crée un nouvel objet
@@ -23,7 +23,7 @@ public abstract class DAO<T> {
      * @param objet l'objet à ajouter dans la source de données
      * @return l'objet tel qu'il a été créé dans la source de données
      */
-    public abstract T créer(T objet) throws DAOException;
+    public abstract boolean créer(T objet) throws DAOException;
 
     /**
      * Modifie un objet dans la source de données
