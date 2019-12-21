@@ -18,6 +18,7 @@ public class Modele {
      */
     public Modele() {
         listeJoueurs=new ArrayList<Joueur>();
+        listeParties=new ArrayList<Partie>();
     }
     /**
      * Ajoute une partie a la base de donnee

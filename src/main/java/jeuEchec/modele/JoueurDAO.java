@@ -11,21 +11,21 @@ public class JoueurDAO extends DAO<Joueur> {
     /**
      * Lit un objet à partir de son id
      *
-     * @param id L'identifiant unique de l'objet à lire pseudo du joueur
+     * @param unJoueur le joueur a lire
      * @return l'objet lu ou null si l'objet n'a pu être lu
      */
     @Override
-    public Joueur lire(Object id) throws DAOException {
+    public Joueur lire(Joueur unJoueur) throws DAOException {
         try{
             Connection conn=SQLConnectionFactory.getConnection();
 
             PreparedStatement stmt = conn.prepareStatement("SELECT pseudo FROM Joueur WHERE pseudo = ?");
-            stmt.setString(1, (String) id);
+            stmt.setString(1, unJoueur.getPseudo());
             ResultSet rs = stmt.executeQuery();
 
-            Joueur unJoueur=null;
+            Joueur joueur=null;
             if(rs.next()){
-                unJoueur=new Joueur((String)id);
+                unJoueur=new Joueur(unJoueur.getPseudo());
             }
 
             rs.close();
@@ -48,16 +48,14 @@ public class JoueurDAO extends DAO<Joueur> {
      * @return l'objet tel qu'il a été créé dans la source de données, null si non cree
      */
     @Override
-    public Joueur créer(Joueur joueur) throws DAOException {
-        Joueur unJoueur=null;
+    public boolean créer(Joueur joueur) throws DAOException {
+        boolean executé=false;
         try{
             Connection conn=SQLConnectionFactory.getConnection();
 
             PreparedStatement stmt = conn.prepareStatement("INSERT INTO Joueur VALUES (?)");
             stmt.setString(1, joueur.getPseudo());
-            stmt.execute();
-
-            unJoueur=lire(joueur.getPseudo());
+            executé=stmt.execute();
 
             conn.close();
 
@@ -65,7 +63,7 @@ public class JoueurDAO extends DAO<Joueur> {
         catch(SQLException e){
             throw new DAOException(e);
         }
-        return unJoueur;
+        return executé;
 
     }
 

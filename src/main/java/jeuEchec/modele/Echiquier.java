@@ -103,6 +103,4 @@ public class Echiquier {
             piece.setCoordonees(xDestination,yDestination);
         }
     }
-
-
 }
