@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>jeuEchec.modele</OriginalElement>
+  <nodes>
+    <node x="747.5" y="0.0">jeuEchec.modele.Piece</node>
+    <node x="0.0" y="527.0">jeuEchec.modele.Tour</node>
+    <node x="318.0" y="988.0">jeuEchec.modele.PartieDAO</node>
+    <node x="519.0" y="797.0">jeuEchec.modele.DAO</node>
+    <node x="0.0" y="797.0">jeuEchec.modele.Partie</node>
+    <node x="897.0" y="570.0">jeuEchec.modele.Reine</node>
+    <node x="598.0" y="527.0">jeuEchec.modele.Pion</node>
+    <node x="299.0" y="527.0">jeuEchec.modele.Roi</node>
+    <node x="1495.0" y="570.0">jeuEchec.modele.Fou</node>
+    <node x="943.0" y="797.0">jeuEchec.modele.Joueur</node>
+    <node x="652.0" y="999.0">jeuEchec.modele.JoueurDAO</node>
+    <node x="1196.0" y="570.0">jeuEchec.modele.Cavalier</node>
+    <node x="1557.0" y="797.0">jeuEchec.modele.Couleur</node>
+    <node x="1235.0" y="797.0">jeuEchec.modele.Echiquier</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="jeuEchec.modele.PartieDAO" target="jeuEchec.modele.DAO">
+      <point x="0.0" y="-81.5" />
+      <point x="475.0" y="963.0" />
+      <point x="572.0" y="963.0" />
+      <point x="-53.0" y="70.5" />
+    </edge>
+    <edge source="jeuEchec.modele.Cavalier" target="jeuEchec.modele.Piece">
+      <point x="0.0" y="-69.5" />
+      <point x="1335.5" y="497.0" />
+      <point x="956.75" y="497.0" />
+      <point x="69.75" y="233.5" />
+    </edge>
+    <edge source="jeuEchec.modele.Roi" target="jeuEchec.modele.Piece">
+      <point x="0.0" y="-112.5" />
+      <point x="438.5" y="497.0" />
+      <point x="817.25" y="497.0" />
+      <point x="-69.75" y="233.5" />
+    </edge>
+    <edge source="jeuEchec.modele.Reine" target="jeuEchec.modele.Piece">
+      <point x="0.0" y="-69.5" />
+      <point x="1036.5" y="507.0" />
+      <point x="910.25" y="507.0" />
+      <point x="23.25" y="233.5" />
+    </edge>
+    <edge source="jeuEchec.modele.Tour" target="jeuEchec.modele.Piece">
+      <point x="0.0" y="-112.5" />
+      <point x="139.5" y="487.0" />
+      <point x="770.75" y="487.0" />
+      <point x="-116.25" y="233.5" />
+    </edge>
+    <edge source="jeuEchec.modele.JoueurDAO" target="jeuEchec.modele.DAO">
+      <point x="0.0" y="-70.5" />
+      <point x="775.0" y="963.0" />
+      <point x="678.0" y="963.0" />
+      <point x="53.0" y="70.5" />
+    </edge>
+    <edge source="jeuEchec.modele.Pion" target="jeuEchec.modele.Piece">
+      <point x="0.0" y="-112.5" />
+      <point x="737.5" y="507.0" />
+      <point x="863.75" y="507.0" />
+      <point x="-23.25" y="233.5" />
+    </edge>
+    <edge source="jeuEchec.modele.Fou" target="jeuEchec.modele.Piece">
+      <point x="0.0" y="-69.5" />
+      <point x="1634.5" y="487.0" />
+      <point x="1003.25" y="487.0" />
+      <point x="116.25" y="233.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="562.5000000000001" y="697.9999999999999" />
+  <SelectedNodes>
+    <node>jeuEchec.modele.Partie</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

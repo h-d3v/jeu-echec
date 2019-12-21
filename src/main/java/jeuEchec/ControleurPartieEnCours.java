@@ -165,6 +165,9 @@ public class ControleurPartieEnCours implements Initializable {
 
 
     @FXML
+    /**
+     * intilalise les Boutons
+     */
     private void initilaliser(){
 
         Piece[] pieces =echiquier.getPieces();

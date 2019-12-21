@@ -85,23 +85,34 @@ public class Echiquier {
      * @param piece la piece de depart
      * @param xDestination la longitude de la case de destination
      * @param yDestination la latitude de la case de destination
+     * @return boolean
      */
 
-    public void jouerCoup(Piece piece, int xDestination, int yDestination){
+    public boolean jouerCoup(Piece piece, int xDestination, int yDestination){
         assert piece!=null;
         assert (xDestination<=7 && xDestination>0);
         assert (yDestination<=7 && yDestination>0);
+        boolean valide=false;
         Couleur couleurPiece=piece.getcouleur();
         Piece pieceDestination=getPieceParCoordonnees(xDestination, yDestination);
 
-        if(pieceDestination!=null&& pieceDestination.getcouleur()!=couleurPiece){
-
+        if(pieceDestination!=null && !pieceDestination.getcouleur().equals(couleurPiece)){
+            System.out.println("piece destination avant delete");
             pieceDestination=null;
             piece.setCoordonees(xDestination,yDestination);
+
+
         }
+
+        else if(pieceDestination!=null && pieceDestination.getcouleur().equals(couleurPiece)) {
+
+        }
+
         else{
             piece.setCoordonees(xDestination,yDestination);
+            valide=true;
         }
+        return valide;
     }
 
 
