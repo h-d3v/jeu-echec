@@ -11,18 +11,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import jeuEchec.modele.Echiquier;
-import jeuEchec.modele.Piece;
+import jeuEchec.modele.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ControleurPartieEnCours implements Initializable {
     protected Stage parent;
     ResourceBundle resources;
     protected Modele modele;
     protected String caseDepart, caseDestination;
+    protected double temps;
 
     @FXML
     private Button c00;
@@ -424,7 +426,6 @@ public class ControleurPartieEnCours implements Initializable {
             else if(piece.getCoordonneesEnString().equals(c77.getId())){
                 c77.setText(piece.toString());
             }
-
         }
         this.resources=resourceBundle;
     }
@@ -434,7 +435,8 @@ public class ControleurPartieEnCours implements Initializable {
      * @throws IOException
      */
     @FXML
-    public void abandonner() throws IOException {
+    public void abandonner() throws IOException, DAOException {
+        //modele.arreterPartieCourrante();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Partie abondonner");
         alert.setHeaderText("Vous avez abondonner la partie");
@@ -445,5 +447,15 @@ public class ControleurPartieEnCours implements Initializable {
         ((ControleurMenuPrincipal)loader.getController()).setParent(parent);
         parent.setScene(new Scene(root));
     }
+
+    /**
+     * mutateur du modele du controlleur
+     * @param modele
+     */
+    public void setModele(Modele modele) {
+        this.modele = modele;
+    }
+
+
 }
 
