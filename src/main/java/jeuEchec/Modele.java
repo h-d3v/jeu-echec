@@ -18,6 +18,7 @@ public class Modele {
      */
     public Modele() {
         listeJoueurs=new ArrayList<Joueur>();
+        listeParties=new ArrayList<Partie>();
     }
     /**
      * Ajoute une partie a la base de donnee
@@ -30,6 +31,28 @@ public class Modele {
         listeParties.add(unePartie);
     }
 
+
+    /**
+     *
+     * @return la partie courrante
+     */
+    public Partie getPartieCourrante() {
+        return partieCourrante;
+    }
+
+    /**
+     * Mutateur de la partie courrante
+     * @param partieCourrante
+     */
+    public void setPartieCourrante(Partie partieCourrante) {
+        this.partieCourrante = partieCourrante;
+    }
+
+    public void arreterPartieCourrante() throws DAOException {
+        assert(partieCourrante.getJoueurGagnant()!=null);
+        partieCourrante.terminerPartie(partieCourrante.getJoueurGagnant());
+        partieDao.modifier(partieCourrante);
+    }
 
     /**
      * Mutateur de la note courante

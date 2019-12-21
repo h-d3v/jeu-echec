@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <HBox alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jeuEchec.ControleurPartieEnCours">
    <children>
@@ -93,36 +97,37 @@
             <Button id="66" fx:id="c66" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
             <Button id="64" fx:id="c64" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
             <Button id="62" fx:id="c62" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Button id="00" fx:id="c00" alignment="CENTER"  minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" />
+            <Button id="00" fx:id="c00" alignment="CENTER" minWidth="10.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #E6CCAB;" />
          </children>
       </GridPane>
       <VBox prefHeight="600.0" prefWidth="300.0">
          <children>
-            <Label fx:id="joueurBlanc" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="157.0" prefWidth="300.0" style="-fx-border-color: red;" text="JoueurBlanc">
-               <VBox.margin>
-                  <Insets bottom="15.0" top="15.0" />
-               </VBox.margin>
-            </Label>
-            <Label fx:id="joueurNoir" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="157.0" prefWidth="300.0" style="-fx-border-color: green;" text="JoueurNoir">
-               <VBox.margin>
-                  <Insets bottom="15.0" />
-               </VBox.margin>
-            </Label>
-            <Label fx:id="lblTemps" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="157.0" prefWidth="300.0" style="-fx-border-color: lightgrey;" text="Temps">
-               <VBox.margin>
-                  <Insets bottom="15.0" />
-               </VBox.margin>
-            </Label>
-            <HBox prefHeight="132.0" prefWidth="300.0">
+            <AnchorPane prefHeight="603.0" prefWidth="349.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="141.0" text="Pause" />
-                  <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="141.0" text="J'ai perdu !!">
-                     <HBox.margin>
-                        <Insets left="22.0" />
-                     </HBox.margin>
-                  </Button>
+                  <Button fx:id="btnAbondon" alignment="CENTER" layoutX="162.0" layoutY="497.0" mnemonicParsing="false" onAction="#abandonner" prefHeight="59.0" prefWidth="121.0" style="-fx-background-color: #f58c76;" text="J'ai perdu !!" />
+                  <Button fx:id="btnPause" alignment="CENTER" layoutX="21.0" layoutY="497.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="121.0" style="-fx-background-color: #f7bc54;" text="Pause" />
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="49.0" prefHeight="75.0" prefWidth="268.0" style="-fx-border-color: green;" text="C'est le tour à">
+                     <font>
+                        <Font name="Comic Sans MS" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="240.0" prefHeight="59.0" prefWidth="268.0" style="-fx-border-color: lightgrey;" text="Temps de la partie">
+                     <font>
+                        <Font name="Comic Sans MS" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTemps" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="264.0" prefHeight="23.0" prefWidth="147.0" text="temps">
+                     <font>
+                        <Font name="Comic Sans MS" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTourJoueur" alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" accessibleText="Blanc" layoutY="87.0" prefHeight="23.0" prefWidth="147.0" text="joueur">
+                     <font>
+                        <Font name="Comic Sans MS" size="13.0" />
+                     </font>
+                  </Label>
                </children>
-            </HBox>
+            </AnchorPane>
          </children>
       </VBox>
    </children>

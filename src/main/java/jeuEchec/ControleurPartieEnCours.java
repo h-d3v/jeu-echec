@@ -2,22 +2,33 @@ package jeuEchec;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import jeuEchec.modele.Echiquier;
-import jeuEchec.modele.Piece;
+import jeuEchec.modele.*;
+
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
+
 
 public class ControleurPartieEnCours implements Initializable {
     protected Stage parent;
     ResourceBundle resources;
     protected Modele modele;
+    protected String caseDepart, caseDestination;
+    protected double temps;
+
+    @FXML
+    private Label lblTourJoueur;
+
     @FXML
     private Button c00;
     @FXML
@@ -158,17 +169,84 @@ public class ControleurPartieEnCours implements Initializable {
     Echiquier echiquier= new Echiquier();
 
 
+    /**
+     * Constructeur du controlleur
+     */
     public ControleurPartieEnCours() {
     }
 
 
+    /*@FXML
+    private void selectionerDestination(){
 
+         if(evt.getTarget()==c11){
+             piece=c11.getId();
+             echiquier.getPieces()[11].setCoordonees(1,1);
+         }
 
-    @FXML
+    }*/
+    /*@FXML
+    private void atterrir(ActionEvent evt){
+        System.out.println("ddd");
+        if(evt.getTarget()==c66){
+            c66.setText(piece);
+        }
+    }
+    */
+    //boolean decoller=true;
+    /*@FXML
+    private void jouerCoup(ActionEvent evt){
+        String pieceId;
+        if (decoller) {
+            if (evt.getTarget() == c11){
+                pieceId = c11.getId();
+                System.out.println("ddd");
+                decoller=false;
+            }
+        }
+        else {
+            if(evt.getTarget()==c66){
+                echiquier.getPieces()[0].setCoordonees(2,6);
+                System.out.println("nvbnvnv");
+                decoller=true;
+                initilaliser();
+            }
+        }
+    }
+*/
     /**
-     * intilalise les Boutons
+     * Mutateur du parent du controlleur
+     * @param parent
      */
-    private void initilaliser(){
+    public void setParent(Stage parent) {
+        this.parent = parent;
+    }
+
+    /**
+     * Arrette la partie courrante et retourne au menu principal
+     * @throws IOException
+     */
+    @FXML
+    public void abandonner() throws IOException, DAOException {
+        //modele.arreterPartieCourrante();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Partie abondonner");
+        alert.setHeaderText("Vous avez abondonner la partie");
+        alert.setContentText("Vous serez retourner au menu principal");
+        alert.showAndWait();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/menuPrincipal.fxml"));
+        Parent root=loader.load();
+        ((ControleurMenuPrincipal)loader.getController()).setParent(parent);
+        parent.setScene(new Scene(root));
+    }
+
+    /**
+     * Initialise le controleur quand il
+     * @param url
+     * @param resourceBundle
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
         Piece[] pieces =echiquier.getPieces();
 
@@ -1354,14 +1432,26 @@ public class ControleurPartieEnCours implements Initializable {
         }
     }
 
-    public void setParent(Stage parent) {
-        this.parent = parent;
+
+    /**
+     * mutateur du modele du controlleur
+     * @param modele
+     */
+    public void setModele(Modele modele) {
+        this.modele = modele;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.resources=resourceBundle;
-        initilaliser();
+    /**
+     * Change le tour du joueur present et
+     * le label
+     */
+    @FXML
+    public void setTourJoueur(Couleur blancOuNoir){
+        if(blancOuNoir==Couleur.BLANC){
+            lblTourJoueur.setText(modele.partieCourrante.getJoueurBlanc().getPseudo());
+        }
+        else{lblTourJoueur.setText(modele.partieCourrante.getJoueurNoir().getPseudo());}
     }
+
 }
 

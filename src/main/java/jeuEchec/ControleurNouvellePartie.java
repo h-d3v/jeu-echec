@@ -29,7 +29,7 @@ public class ControleurNouvellePartie implements Initializable {
     protected Stage parent;
     protected ResourceBundle resources;
     protected Modele modele;
-
+    protected Partie partie;
     @FXML
     private TextField tFpseudoNoir;
 
@@ -108,14 +108,14 @@ public class ControleurNouvellePartie implements Initializable {
         modele.setJoueursCourrant(joueursPartie);
 
         //cree la nouvelle partie
-        Partie partie=new Partie(joueurBlanc, joueurNoir);
-
-       // modele.ajouterPartie(partie);
-
+        partie=new Partie(joueurBlanc, joueurNoir);
+        modele.ajouterPartie(partie);
+        modele.setPartieCourrante(partie);
         //on charge l'affichage de la nouvelle partie
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ui/partieEnCours.fxml"));
         Parent root=loader.load();
         ((ControleurPartieEnCours)loader.getController()).setParent(parent);
+        ((ControleurPartieEnCours)loader.getController()).setModele(modele);
         parent.setScene(new Scene(root));
         parent.setTitle(joueurBlanc.getPseudo()+" VS "+joueurNoir.getPseudo());
     }

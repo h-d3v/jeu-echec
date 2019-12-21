@@ -8,14 +8,15 @@ public class TestDAOJoueur {
     public void testerlireJoueurDao() throws DAOException{
         Joueur joueur=new Joueur("Sin-Deny Thorpe");
         JoueurDAO joueurDAO=new JoueurDAO();
-        assertEquals(joueur.getPseudo(), joueurDAO.lire("Sin-Deny Thorpe").getPseudo() );
+        assertEquals(joueur.getPseudo(), joueurDAO.lire(joueur).
+                getPseudo() );
     }
 
     @Test
     public void testerAjouterJoueur()throws DAOException{
         Joueur joueur=new Joueur("Je suis un nouveau joueur");
         JoueurDAO joueurDAO=new JoueurDAO();
-        assertEquals(joueur.getPseudo(), joueurDAO.créer(joueur).getPseudo());
+        assertEquals(true, joueurDAO.créer(joueur));
     }
     @Test
     public void testerRetirerJoueur()throws DAOException{
