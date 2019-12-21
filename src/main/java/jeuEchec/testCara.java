@@ -6,7 +6,6 @@ import jeuEchec.modele.JoueurDAO;
 
 public class testCara {
     public static void main(String[] args) {
-        System.out.println("\u2659");
 
         Joueur joueur= new Joueur("Sin-Deny Thorpe");
         JoueurDAO joueurDAO=new JoueurDAO();

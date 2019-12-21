@@ -31,6 +31,7 @@ public class Modele {
         listeParties.add(unePartie);
     }
 
+
     /**
      *
      * @return la partie courrante
