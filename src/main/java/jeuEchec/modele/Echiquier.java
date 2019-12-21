@@ -40,6 +40,10 @@ public class Echiquier {
 
     }
 
+    /**
+     *
+     * @return pieces les pieces de la partie
+     */
     public Piece[] getPieces() {
         return pieces;
     }
@@ -57,6 +61,13 @@ public class Echiquier {
     }
 
 
+    /**
+     *
+     * @param x coordonnee longitude
+     * @param y coordonnee latitude
+     * @return la piece, null si pas de piece a cette coordonnee
+     */
+
     public Piece getPieceParCoordonnees(int x, int y){
         Piece piece=null;
         for(Piece unePiece : pieces){
@@ -69,9 +80,12 @@ public class Echiquier {
     }
 
 
-
-
-
+    /**
+     *
+     * @param piece la piece de depart
+     * @param xDestination la longitude de la case de destination
+     * @param yDestination la latitude de la case de destination
+     */
 
     public void jouerCoup(Piece piece, int xDestination, int yDestination){
         assert piece!=null;

@@ -507,23 +507,6 @@ public class ControleurPartieEnCours implements Initializable {
 
 
 
-  /*  @FXML
-    private void decoller(ActionEvent evt){
-
-         if(evt.getTarget()==c11){
-             piece=c11.getId();
-             echiquier.getPieces()[11].setCoordonees(1,1);
-         }
-
-    }
-    @FXML
-    private void atterrir(ActionEvent evt){
-        System.out.println("ddd");
-        if(evt.getTarget()==c66){
-            c66.setText(piece);
-        }
-    }
-    */
 
     String pieceId = "";
     boolean decoller=true;
