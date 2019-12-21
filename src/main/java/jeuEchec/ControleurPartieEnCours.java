@@ -456,6 +456,5 @@ public class ControleurPartieEnCours implements Initializable {
         this.modele = modele;
     }
 
-
 }
 
